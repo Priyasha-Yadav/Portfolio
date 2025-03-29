@@ -230,12 +230,11 @@ const CertificatesSection = () => {
                 transition={{ duration: 1.5, ease: 'easeOut' }}
                 className="text-center mb-16"
             >
-          <h2 className="text-5xl font-bold mb-4 inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent animate-gradient">
+          <h4 className="text-4xl font-bold mb-4 inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent animate-gradient p-2 leading-[1.2]">
           Certifications
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-purple-500 mx-auto rounded-full"></div>
-                <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-                    A collection of professional certificates showcasing my technical expertise
+                </h4>
+                <p className="max-w-2xl mx-auto text-white">
+                A collection of professional certificates showcasing my technical expertise
                 </p>
             </motion.div>
 

@@ -5,13 +5,13 @@ import ProjectsPage from './components/ProjectsDesc.jsx'; // Ensure this file ex
 import PortfolioDashboard from './components/PortfolioDashboard.jsx'; // Ensure this file exists
 
 function App() {
-  const [activeColor, setActiveColor] = useState('pink');
+
   
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<PortfolioDashboard activeColor={activeColor} />} />
+          <Route path="/" element={<PortfolioDashboard />} />
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </Router>

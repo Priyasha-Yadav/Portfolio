@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MessageSquare, Github, Settings, Linkedin, Twitter, X, Home, Briefcase, User, ChevronRight } from 'lucide-react';
+import { Mail, MessageSquare, Github, Settings, Linkedin, Twitter, X, Home, Briefcase, User, ChevronRight, Award } from 'lucide-react';
 
 const socialLinks = {
     github: "https://github.com/Priyasha-Yadav",
@@ -12,14 +12,15 @@ const socialLinks = {
 };
 
 const colorOptions = [
-    { name: 'Midnight', value: '#0f172a', textColor: 'text-white' },
-    { name: 'Royal', value: '#1e40af', textColor: 'text-white' },
-    { name: 'Emerald', value: '#047857', textColor: 'text-white' },
-    { name: 'Violet', value: '#7e22ce', textColor: 'text-white' },
-    { name: 'Rose', value: '#be185d', textColor: 'text-white' },
-    { name: 'Amber', value: '#b45309', textColor: 'text-white' },
-    { name: 'Slate', value: '#334155', textColor: 'text-white' },
-    { name: 'Charcoal', value: '#1c1c1c', textColor: 'text-white' },
+    { name: 'Blue', value: 'blue', textColor: 'text-white' },
+    { name: 'Green', value: 'green', textColor: 'text-white' },
+    { name: 'Black', value: 'black', textColor: 'text-white' },
+    { name: 'Violet', value: 'violet', textColor: 'text-white' },
+    { name: 'Pink', value: 'pink', textColor: 'text-white' },
+    { name: 'Red', value: 'red', textColor: 'text-white' },
+    { name: 'Orange', value: 'orange', textColor: 'text-white' },
+
+
 ];
 
 const SideNavigation = () => {
@@ -30,22 +31,27 @@ const SideNavigation = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [showTooltip, setShowTooltip] = useState('');
     const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
+    const [tooltipOpacity, setTooltipOpacity] = useState(0);
+    
+    // Added tooltip timer for smooth transitions
+    const [tooltipTimer, setTooltipTimer] = useState(null);
 
     // Apply the initial background color on component mount
     useEffect(() => {
-        document.body.style.backgroundColor = activeColor;
-        
-        // Clean up on unmount
+        const savedColor = localStorage.getItem('preferredBgColor');
+        if (savedColor) {
+            setActiveColor(savedColor);
+        } else {
+            localStorage.setItem('preferredBgColor', activeColor);
+        }
         return () => {
-            document.body.style.backgroundColor = '';
+            document.body.style.backgroundColor = 'black';
         };
     }, [activeColor]);
 
     const handleNavigation = (section) => {
-        // Highlight the section first
         setHighlighted(section);
 
-        // Wait for the highlight transition, then navigate
         setTimeout(() => {
             if (section === 'contact') {
                 document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -57,78 +63,108 @@ const SideNavigation = () => {
                 window.open(socialLinks.github, '_blank');
             } else if (section === 'settings') {
                 setActiveSection('settings');
-                setShowColorOptions(!showColorOptions); // Toggle color options
+                setShowColorOptions(!showColorOptions);
+            } else if (section === 'certificates') {
+                document.getElementById('certificates-section')?.scrollIntoView({ behavior: 'smooth' });
+                setActiveSection(section);
+            } else if (section === 'home') {
+                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+                setActiveSection('home');
             } else {
-                // Handle scrolling to other sections
                 document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection(section);
             }
-            
-            // Reset highlight after navigation
+
             setTimeout(() => {
                 setHighlighted('');
-            }, 300); // 300ms delay to match the highlight transition duration
-        }, 300); // 300ms delay to match the highlight transition duration
+            }, 300);
+        }, 300);
     };
 
     const handleColorChange = (color) => {
         setActiveColor(color);
-        document.body.style.backgroundColor = color; 
-        
-        // Optional: Save preference to localStorage
         localStorage.setItem('preferredBgColor', color);
-        
-        // Close color options after selection
+
         setTimeout(() => {
             setShowColorOptions(false);
         }, 300);
     };
-    
+
     const handleMouseEnter = (section, e) => {
+        // Clear any existing timer
+        if (tooltipTimer) clearTimeout(tooltipTimer);
+        
+        const rect = e.currentTarget.getBoundingClientRect();
+        
+        // Set position first
+        setTooltipPosition({
+            top: rect.top + (rect.height / 2),
+            left: rect.left - 110  // Adjust to prevent edge glitching
+        });
+        
+        // Set the section before fading in
         setShowTooltip(section);
         
-        // Calculate position based on the button's position
-        const rect = e.currentTarget.getBoundingClientRect();
-        setTooltipPosition({
-            top: rect.top + window.scrollY + rect.height / 2,
-            left: rect.left - 120, // Position to the left of the button
-        });
+        // Fade in after a short delay
+        const timer = setTimeout(() => {
+            setTooltipOpacity(1);
+        }, 50);
+        
+        setTooltipTimer(timer);
     };
-    
+
     const handleMouseLeave = () => {
-        setShowTooltip('');
+        // Clear any existing timer
+        if (tooltipTimer) clearTimeout(tooltipTimer);
+        
+        // Fade out
+        setTooltipOpacity(0);
+        
+        // Remove tooltip after animation completes
+        const timer = setTimeout(() => {
+            setShowTooltip('');
+        }, 300);
+        
+        setTooltipTimer(timer);
     };
+
+    // Cleanup timers on unmount
+    useEffect(() => {
+        return () => {
+            if (tooltipTimer) clearTimeout(tooltipTimer);
+        };
+    }, [tooltipTimer]);
 
     const navigationItems = [
         { icon: <Home size={22} />, section: 'home', label: 'Home' },
         { icon: <User size={22} />, section: 'about', label: 'About Me' },
         { icon: <Briefcase size={22} />, section: 'projects', label: 'Projects' },
         { icon: <MessageSquare size={22} />, section: 'skills', label: 'Skills' },
+        { icon: <Award size={22} />, section: 'certificates', label: 'Certificates' },
         { icon: <Github size={22} />, section: 'github', label: 'GitHub' },
         { icon: <Linkedin size={22} />, section: 'linkedin', label: 'LinkedIn' },
         { icon: <Twitter size={22} />, section: 'twitter', label: 'Twitter' },
         { icon: <Mail size={22} />, section: 'contact', label: 'Contact Me' },
-        { icon: <Settings size={22} />, section: 'settings', label: 'Theme Settings' },
+        { icon: <Settings size={22} />, section: 'settings', label: 'Settings' },
     ];
 
     return (
         <>
             {/* Expand/collapse toggle button */}
-            <button 
+            <button
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="fixed right-6 top-6 z-50 bg-black/80 backdrop-blur-md p-2 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300"
                 aria-label={isExpanded ? "Collapse navigation" : "Expand navigation"}
             >
-                <ChevronRight 
-                    size={20} 
-                    className={`text-white transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
+                <ChevronRight
+                    size={20}
+                    className={`text-white transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
                 />
             </button>
-            
-            <div 
-                className={`fixed right-0 top-0 h-full z-40 transition-all duration-500 ease-in-out ${
-                    isExpanded ? 'w-64' : 'w-20'
-                } bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center`}
+
+            <div
+                className={`fixed right-0 top-0 h-full z-40 transition-all duration-500 ease-in-out ${isExpanded ? 'w-64' : 'w-20'
+                    } bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center`}
             >
                 <div className="py-8 px-4 flex flex-col items-center gap-6">
                     {navigationItems.map(({ icon, section, label }) => (
@@ -137,60 +173,56 @@ const SideNavigation = () => {
                             onClick={() => handleNavigation(section)}
                             onMouseEnter={(e) => !isExpanded && handleMouseEnter(section, e)}
                             onMouseLeave={handleMouseLeave}
-                            className={`group relative flex items-center ${
-                                isExpanded ? 'w-full justify-start px-4' : 'w-12 h-12 justify-center'
-                            } ${
-                                activeSection === section 
-                                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' 
-                                    : highlighted === section 
+                            className={`group relative flex items-center ${isExpanded ? 'w-full justify-start px-4' : 'w-12 h-12 justify-center'
+                                } ${activeSection === section
+                                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                                    : highlighted === section
                                         ? 'bg-gradient-to-r from-purple-500/80 to-pink-500/80 text-white'
                                         : 'bg-black/50 text-gray-300 hover:bg-gray-800/80'
-                            } rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${
-                                isExpanded ? 'hover:translate-x-1' : ''
-                            }`}
+                                } rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${isExpanded ? 'hover:translate-x-1' : ''
+                                }`}
                         >
                             <span className={`${highlighted === section ? 'animate-pulse' : ''}`}>
                                 {icon}
                             </span>
-                            
+
                             {isExpanded && (
-                                <span className={`ml-3 text-sm font-medium transition-opacity duration-300 ${
-                                    isExpanded ? 'opacity-100' : 'opacity-0'
-                                }`}>
+                                <span className={`ml-3 text-sm font-medium transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0'
+                                    }`}>
                                     {label}
                                 </span>
                             )}
-                            
+
                             {/* Glowing effect on hover */}
                             <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-600/0 to-pink-600/0 group-hover:from-purple-600/20 group-hover:to-pink-600/20 transition-all duration-300 opacity-0 group-hover:opacity-100"></span>
                         </button>
                     ))}
                 </div>
-                
-                {/* Tooltip for non-expanded state */}
-                {!isExpanded && showTooltip && (
-                    <div 
-                        className="fixed z-50 bg-black/90 text-white text-sm py-1.5 px-3 rounded-md shadow-lg pointer-events-none transform -translate-y-1/2 transition-opacity duration-200"
-                        style={{ 
-                            top: `${tooltipPosition.top}px`, 
-                            left: `${tooltipPosition.left}px`,
-                            opacity: showTooltip ? 1 : 0
-                        }}
-                    >
-                        {navigationItems.find(item => item.section === showTooltip)?.label}
-                        <div className="absolute right-0 top-1/2 transform translate-x-1 -translate-y-1/2 border-8 border-transparent border-l-black/90"></div>
-                    </div>
-                )}
             </div>
-            
+
+            {/* Tooltip for non-expanded state - Fixed positioning with smooth transition */}
+            {showTooltip && (
+                <div
+                    className="fixed z-50 bg-black/90 text-white text-sm py-1.5 px-3 rounded-md shadow-lg transform -translate-y-1/2 pointer-events-none"
+                    style={{
+                        top: `${tooltipPosition.top}px`,
+                        left: `${tooltipPosition.left}px`,
+                        opacity: tooltipOpacity,
+                        transition: 'opacity 0.3s ease-in-out'
+                    }}
+                >
+                    {navigationItems.find(item => item.section === showTooltip)?.label}
+                    <div className="absolute right-0 top-1/2 transform translate-x-1 -translate-y-1/2 border-8 border-transparent border-l-black/90"></div>
+                </div>
+            )}
+
             {/* Color options panel */}
             {showColorOptions && (
-                <div className={`fixed right-0 top-0 h-full z-30 w-72 bg-black/80 backdrop-blur-lg border-l border-white/10 shadow-2xl transform transition-transform duration-500 ease-in-out ${
-                    showColorOptions ? 'translate-x-0' : 'translate-x-full'
-                }`}>
+                <div className={`fixed right-0 top-0 h-full z-30 w-72 bg-black/80 backdrop-blur-lg border-l border-white/10 shadow-2xl transform transition-transform duration-500 ease-in-out ${showColorOptions ? 'translate-x-0' : 'translate-x-full'
+                    }`}>
                     <div className="p-6 h-full flex flex-col">
                         <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Theme Settings</h3>
+                            <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Settings</h3>
                             <button
                                 onClick={() => setShowColorOptions(false)}
                                 className="p-1.5 rounded-full bg-gray-800/80 hover:bg-gray-700/80 transition-colors"
@@ -198,7 +230,7 @@ const SideNavigation = () => {
                                 <X size={18} className="text-gray-300" />
                             </button>
                         </div>
-                        
+
                         <div className="mb-6">
                             <h4 className="text-sm font-medium text-gray-400 mb-3">Background Color</h4>
                             <div className="grid grid-cols-2 gap-3">
@@ -206,9 +238,8 @@ const SideNavigation = () => {
                                     <button
                                         key={color.name}
                                         onClick={() => handleColorChange(color.value)}
-                                        className={`relative h-16 rounded-lg flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 ${
-                                            activeColor === color.value ? 'ring-2 ring-white ring-offset-2 ring-offset-black' : ''
-                                        }`}
+                                        className={`relative h-16 rounded-lg flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 ${activeColor === color.value ? 'ring-2 ring-white ring-offset-2 ring-offset-black' : ''
+                                            }`}
                                         style={{ backgroundColor: color.value }}
                                     >
                                         <span className={`text-xs font-medium ${color.textColor}`}>
@@ -221,7 +252,7 @@ const SideNavigation = () => {
                                 ))}
                             </div>
                         </div>
-                        
+
                         <div className="mt-auto">
                             <p className="text-xs text-gray-500">
                                 Your theme preferences will be saved for your next visit.

@@ -54,7 +54,7 @@ const AboutMe = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-purple-500/20 z-10"></div>
                     <img
-                        // src="://res.cloudinary.com/dd5zrwqzj/image/upload/v1740815104/WhatsApp_Image_2025-03-01_at_13.11.03_md1y5a.jphttpsg"
+                       // src="https://res.cloudinary.com/dd5zrwqzj/image/upload/v1740815104/WhatsApp_Image_2025-03-01_at_13.11.03_md1y5a.jpg"
                         alt="Priyasha Yadav"
                         className="w-full h-full object-cover"
                         style={{ objectPosition: '0 -100px' }}
