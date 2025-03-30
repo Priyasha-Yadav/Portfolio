@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MessageSquare, Github, Settings, Linkedin, Twitter, X, Home, Briefcase, User, ChevronRight, Award } from 'lucide-react';
+import { Home, User, Briefcase, MessageSquare, Award, X, Github, Mail, Settings, BookCheck, Code2, ChevronRight } from 'lucide-react';
 
 const socialLinks = {
     github: "https://github.com/Priyasha-Yadav",
@@ -62,14 +62,18 @@ const SideNavigation = () => {
             } else if (section === 'github') {
                 window.open(socialLinks.github, '_blank');
             } else if (section === 'settings') {
-                setActiveSection('settings');
-                setShowColorOptions(!showColorOptions);
+                setShowColorOptions((prev) => !prev);
+                setActiveSection(section);
             } else if (section === 'certificates') {
                 document.getElementById('certificates-section')?.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection(section);
             } else if (section === 'home') {
                 document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection('home');
+            } else if (section === 'leetcode') {
+                window.open(socialLinks.leetcode, '_blank');
+            } else if (section === 'sololearn') {
+                window.open(socialLinks.sololearn, '_blank');
             } else {
                 document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection(section);
@@ -142,8 +146,8 @@ const SideNavigation = () => {
         { icon: <MessageSquare size={22} />, section: 'skills', label: 'Skills' },
         { icon: <Award size={22} />, section: 'certificates', label: 'Certificates' },
         { icon: <Github size={22} />, section: 'github', label: 'GitHub' },
-        { icon: <Linkedin size={22} />, section: 'linkedin', label: 'LinkedIn' },
-        { icon: <Twitter size={22} />, section: 'twitter', label: 'Twitter' },
+        { icon: <BookCheck size={22} />, section: 'sololearn', label: 'Sololearn' },
+        { icon: <Code2 size={22} />, section: 'leetcode', label: 'LeetCode' },
         { icon: <Mail size={22} />, section: 'contact', label: 'Contact Me' },
         { icon: <Settings size={22} />, section: 'settings', label: 'Settings' },
     ];
@@ -218,7 +222,7 @@ const SideNavigation = () => {
 
             {/* Color options panel */}
             {showColorOptions && (
-                <div className={`fixed right-0 top-0 h-full z-30 w-100 bg-black/80 backdrop-blur-lg border-l border-white/10 shadow-2xl transform transition-transform duration-500 ease-in-out ${showColorOptions ? 'translate-x-0' : 'translate-x-full'
+                <div className={`fixed right-0 top-0 h-full w-100 z-30 bg-black/80 backdrop-blur-lg border-l border-white/10 shadow-2xl transform transition-transform duration-500 ease-in-out ${showColorOptions ? 'translate-x-0' : 'translate-x-full'
                     }`}>
                     <div className="p-6 pr-20 h-full flex flex-col">
                         <div className="flex justify-between items-center mb-6">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Code, Database, Layout, Terminal, Wrench, Figma, Settings2 } from "lucide-react";
+import { Code, Database, Layout, Wrench, Figma, Settings2 } from "lucide-react";
 
 const skills = [
   { 
@@ -60,6 +60,14 @@ const skills = [
       { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/visual_studio_code.png", x: "90%", y: "10%" },
     ],
   },
+  {
+    category: "Design",
+    details: "Figma, Visual Design",
+    icon: <Figma className="w-6 h-6 text-pink-400" />,
+    floatingIcons: [
+      { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/figma.png", x: "30%", y: "0%" },
+    ],
+  }
 ];
 
 const SkillsSection = () => {
