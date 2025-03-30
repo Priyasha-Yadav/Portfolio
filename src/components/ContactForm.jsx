@@ -192,7 +192,7 @@ const ContactForm = () => {
                             target="_blank"
                             className="w-full py-3 px-6 bg-gradient-to-r from-red-500 to-purple-600 text-white rounded-lg hover:shadow-lg hover:shadow-teal-500/20 transition-all duration-300 flex items-center justify-center"
                         >
-                            Download Resume
+                            View Resume on Google Drive
                         </a>
                     </div>
                 </motion.div>

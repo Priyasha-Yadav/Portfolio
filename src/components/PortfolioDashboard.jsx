@@ -6,6 +6,7 @@ import AboutMe from './AboutMe';
 import ContactForm from './ContactForm';
 import Hero from './Hero';
 import CertificatesSection from './CertificatesSection.jsx';
+import KonamiEasterEgg from './KonamiEasterEgg.jsx';
 
 const PortfolioDashboard = () => {
   const phoneNumber = "918733012811";
@@ -133,7 +134,7 @@ const PortfolioDashboard = () => {
       <section id="about">
         <AboutMe />
       </section>
-      
+     < KonamiEasterEgg />
       {/* Contact Me Section */}
       <section id="contact" className="py-16 px-4">
         <ContactForm />

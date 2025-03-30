@@ -32,7 +32,7 @@ const SideNavigation = () => {
     const [showTooltip, setShowTooltip] = useState('');
     const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
     const [tooltipOpacity, setTooltipOpacity] = useState(0);
-    
+
     // Added tooltip timer for smooth transitions
     const [tooltipTimer, setTooltipTimer] = useState(null);
 
@@ -93,38 +93,38 @@ const SideNavigation = () => {
     const handleMouseEnter = (section, e) => {
         // Clear any existing timer
         if (tooltipTimer) clearTimeout(tooltipTimer);
-        
+
         const rect = e.currentTarget.getBoundingClientRect();
-        
+
         // Set position first
         setTooltipPosition({
             top: rect.top + (rect.height / 2),
             left: rect.left - 110  // Adjust to prevent edge glitching
         });
-        
+
         // Set the section before fading in
         setShowTooltip(section);
-        
+
         // Fade in after a short delay
         const timer = setTimeout(() => {
             setTooltipOpacity(1);
         }, 50);
-        
+
         setTooltipTimer(timer);
     };
 
     const handleMouseLeave = () => {
         // Clear any existing timer
         if (tooltipTimer) clearTimeout(tooltipTimer);
-        
+
         // Fade out
         setTooltipOpacity(0);
-        
+
         // Remove tooltip after animation completes
         const timer = setTimeout(() => {
             setShowTooltip('');
         }, 300);
-        
+
         setTooltipTimer(timer);
     };
 
@@ -163,7 +163,7 @@ const SideNavigation = () => {
             </button>
 
             <div
-                className={`fixed right-0 top-0 h-full z-40 transition-all duration-500 ease-in-out ${isExpanded ? 'w-64' : 'w-20'
+                className={`fixed right-0 top-0 h-full z-40 transition-all duration-500 ease-in-out ${isExpanded ? 'w-50' : 'w-20'
                     } bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center`}
             >
                 <div className="py-8 px-4 flex flex-col items-center gap-6">
@@ -178,7 +178,7 @@ const SideNavigation = () => {
                                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                                     : highlighted === section
                                         ? 'bg-gradient-to-r from-purple-500/80 to-pink-500/80 text-white'
-                                        : 'bg-black/50 text-gray-300 hover:bg-gray-800/80'
+                                        : 'text-gray-300 ho'
                                 } rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 ${isExpanded ? 'hover:translate-x-1' : ''
                                 }`}
                         >
@@ -194,7 +194,7 @@ const SideNavigation = () => {
                             )}
 
                             {/* Glowing effect on hover */}
-                            <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-600/0 to-pink-600/0 group-hover:from-purple-600/20 group-hover:to-pink-600/20 transition-all duration-300 opacity-0 group-hover:opacity-100"></span>
+                            <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-600/0 to-pink-600/0 transition-all duration-300 opacity-0 group-hover:opacity-100"></span>
                         </button>
                     ))}
                 </div>
@@ -218,9 +218,9 @@ const SideNavigation = () => {
 
             {/* Color options panel */}
             {showColorOptions && (
-                <div className={`fixed right-0 top-0 h-full z-30 w-72 bg-black/80 backdrop-blur-lg border-l border-white/10 shadow-2xl transform transition-transform duration-500 ease-in-out ${showColorOptions ? 'translate-x-0' : 'translate-x-full'
+                <div className={`fixed right-0 top-0 h-full z-30 w-100 bg-black/80 backdrop-blur-lg border-l border-white/10 shadow-2xl transform transition-transform duration-500 ease-in-out ${showColorOptions ? 'translate-x-0' : 'translate-x-full'
                     }`}>
-                    <div className="p-6 h-full flex flex-col">
+                    <div className="p-6 pr-20 h-full flex flex-col">
                         <div className="flex justify-between items-center mb-6">
                             <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Settings</h3>
                             <button
@@ -253,11 +253,21 @@ const SideNavigation = () => {
                             </div>
                         </div>
 
-                        <div className="mt-auto">
-                            <p className="text-xs text-gray-500">
-                                Your theme preferences will be saved for your next visit.
-                            </p>
+                        <div className=" p-4 bg-black/50 rounded-lg shadow-md">
+                            <p className="text-lg font-semibold text-gray-300 mb-2">✨ Puzzle Challenge</p>
+                            <p className="text-sm text-gray-400 italic">"The one who greets is the sole noble."</p>
+                            <p className="text-sm text-gray-500 mt-1">Solution: Just type <span className="text-green-400 font-bold">'hello'</span>.</p>
                         </div>
+
+                        <div className="mt-4 p-4 bg-black/50 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                            <p className="text-lg font-semibold text-gray-300 mb-2">✨ Tech Stack Tip</p>
+                            <p className="text-sm text-gray-400">Hover over the tech stack to see the icons bubble with a dynamic effect.</p>
+                        </div>
+
+                        <div className="mt-auto text-center text-xs text-gray-500">
+                            <p>Your theme preferences will be saved for your next visit.</p>
+                        </div>
+
                     </div>
                 </div>
             )}
