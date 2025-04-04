@@ -145,7 +145,7 @@ const SkillsSection = () => {
             style={{ top: item.y, left: item.x }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: [10, -10, 10] }}
-            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
           />
         ))}
       </div>
