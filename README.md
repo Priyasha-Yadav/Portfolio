@@ -8,12 +8,40 @@ Welcome to the GitHub repo for **my personal portfolio website** — a little pi
 
 👉 [Visit My Portfolio](https://priyasha-yadav.vercel.app) ← *Click if you're curious*
 
+## 🖼️ Portfolio Sneak Peek
+
+Because sometimes a picture *is* worth a thousand lines of code:
+
+### Home Page
+![Home Page](https://res.cloudinary.com/dd5zrwqzj/image/upload/v1745515774/Screenshot_2025-04-24_at_10.53.20_PM_kkrdsq.png)
+
+---
+### Projects Page
+![Projects](https://res.cloudinary.com/dd5zrwqzj/image/upload/v1745515778/Screenshot_2025-04-24_at_10.53.56_PM_r1ahi9.png)
+
+---
+### Certificates
+![Certificates](https://res.cloudinary.com/dd5zrwqzj/image/upload/v1745515774/Screenshot_2025-04-24_at_10.54.26_PM_ilxpeu.png)
+
+---
+### About Me
+![About Me](https://res.cloudinary.com/dd5zrwqzj/image/upload/v1745515771/Screenshot_2025-04-24_at_10.55.17_PM_vgoyy9.png)
+
+---
+### Get in Touch
+![Get in Touch](https://res.cloudinary.com/dd5zrwqzj/image/upload/v1745515758/Screenshot_2025-04-24_at_10.56.12_PM_zzecj3.png)
+
+---
+### Tech Stack
+![Tech Stack](https://res.cloudinary.com/dd5zrwqzj/image/upload/v1745515768/Screenshot_2025-04-24_at_10.54.10_PM_nvgeks.png)
+
+---
+
 ## ✨ Tech Stack
 
 This website is built using a cocktail of the web's finest tools:
 
 - **Frontend:** React.js + Tailwind CSS + Vite (blazing fast and aesthetic, like a coding racecar 🏎️💨)
-- **Backend (if any):** Node.js / Express (or not, if it's a static wonder)
 - **Animations:** Framer Motion (because why scroll when you can *float*?)
 - **Icons & Illustrations:** Lucide Icons, Heroicons, and lovingly crafted SVG magic
 
