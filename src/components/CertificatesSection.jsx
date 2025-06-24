@@ -11,20 +11,20 @@ const certificates = [
       link: "https://www.sololearn.com/certificates/CC-IPYFAP0I", 
     },
     {
-      title: "Introduction to C",
+      title: "Generative AI",
       organization: "SheKunj",
       date: "March 2025",
       category: "Programming",
       image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193967/Screenshot_2025-03-29_at_2.01.50_AM_gbemki.png",
-      link: "https://www.sololearn.com/certificates/CC-FYR8YLCR",
+      link: "https://www.shekunj.com/certificate-detail/14352",
     },
     {
-      title: "Introduction to C",
+      title: "Google Ads App",
       organization: "SheKunj",
       date: "March 2025",
       category: "Programming",
       image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193966/Screenshot_2025-03-29_at_2.01.32_AM_iogfis.png",
-      link: "https://www.sololearn.com/certificates/CC-FYR8YLCR",
+      link: "https://www.shekunj.com/certificate-detail/14378",
     },
     {
       title: "C++ Intermediate",
@@ -154,6 +154,24 @@ const certificates = [
       image: "https://api2.sololearn.com/v2/certificates/CC-FYR8YLCR/image/png?t=638625746253262490",
       link: "https://www.sololearn.com/certificates/CC-FYR8YLCR",
     },
+       {
+      title: "AWS APAC Solutions Architecture",
+      organization: "Forage",
+      date: "June 2025",
+      category: "Cloud",
+      image: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_sCbgcpTY2ZHS6Qurb_1750028004372_completion_certificate.pdf",
+      link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_sCbgcpTY2ZHS6Qurb_1750028004372_completion_certificate.pdf",
+      
+    },
+    {
+      title: "Cybersecurity Analyst Job Simulation",
+      organization: "Forage",
+      date: "June 2025",
+      category: "Technology",
+      image: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
+      link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
+      
+    }
 ];
 
 // Create categories for filtering
