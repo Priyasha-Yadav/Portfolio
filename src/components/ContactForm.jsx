@@ -30,7 +30,7 @@ const ContactForm = () => {
         emailjs
             .sendForm(
                 "service_32b5lsh",
-                "template_320mzaj",
+                "template_9mdsi1q",
                 form.current,
                 "jD0YSS1N5xYf-ycvy"
             )
