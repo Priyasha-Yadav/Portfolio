@@ -106,7 +106,7 @@ const AboutMe = () => {
                                 <div className="bg-gray-900/50 p-5 rounded-lg hover:shadow-2xl hover:ring-1 hover:ring-purple-500/70 transition duration-300">
                                     <p className="text-white font-semibold text-lg">B.Tech in Computer Science</p>
                                     <p className="text-gray-400">Rai University × CodingGita <br /> 2024 - 2028</p>
-                                    <p className="text-blue-400 font-medium mt-1">CGPA: 9.95 🌟</p>
+                                    <p className="text-blue-400 font-medium mt-1">CGPA: 9.63 🌟</p>
                                 </div>
 
                                 {/* Class 12 */}
