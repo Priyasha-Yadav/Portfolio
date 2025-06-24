@@ -14,7 +14,7 @@ const certificates = [
       title: "Generative AI",
       organization: "SheKunj",
       date: "March 2025",
-      category: "Programming",
+      category: "Technology",
       image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193967/Screenshot_2025-03-29_at_2.01.50_AM_gbemki.png",
       link: "https://www.shekunj.com/certificate-detail/14352",
     },
@@ -22,7 +22,7 @@ const certificates = [
       title: "Google Ads App",
       organization: "SheKunj",
       date: "March 2025",
-      category: "Programming",
+      category: "Technology",
       image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193966/Screenshot_2025-03-29_at_2.01.32_AM_iogfis.png",
       link: "https://www.shekunj.com/certificate-detail/14378",
     },
@@ -69,7 +69,7 @@ const certificates = [
     {
       title: "Introduction to C++",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Programming",
       image: "https://api2.sololearn.com/v2/certificates/CC-7BGJSIBU/image/png?t=638726507033878350",
       link: "https://www.sololearn.com/certificates/CC-7BGJSIBU",
@@ -77,7 +77,7 @@ const certificates = [
     {
       title: "Introduction to Java",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Programming",
       image: "https://api2.sololearn.com/v2/certificates/CC-BM8X6NZI/image/png?t=638725252007505580",
       link: "https://www.sololearn.com/certificates/CC-BM8X6NZI",
@@ -85,7 +85,7 @@ const certificates = [
     {
       title: "JavaScript Intermediate",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Programming",
       image: "https://api2.sololearn.com/v2/certificates/CC-MZA4LT9Y/image/png?t=638724558711724680",
       link: "https://www.sololearn.com/certificates/CC-MZA4LT9Y",
@@ -93,7 +93,7 @@ const certificates = [
     {
       title: "Python Developer",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Programming",
       image: "https://api2.sololearn.com/v2/certificates/CC-PULWLYCU/image/png?t=638718778158268370",
       link: "https://www.sololearn.com/certificates/CC-PULWLYCU",
@@ -101,7 +101,7 @@ const certificates = [
     {
       title: "Web Development",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Web Development",
       image: "https://api2.sololearn.com/v2/certificates/CC-P6H0LEIA/image/png?t=638705317285883560",
       link: "https://www.sololearn.com/certificates/CC-P6H0LEIA",
@@ -109,7 +109,7 @@ const certificates = [
     {
       title: "Introduction to Python",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Programming",
       image: "https://api2.sololearn.com/v2/certificates/CC-NEZBGXJJ/image/png?t=638717458600839120",
       link: "https://www.sololearn.com/certificates/CC-NEZBGXJJ",
@@ -117,7 +117,7 @@ const certificates = [
     {
       title: "Introduction to SQL",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Database",
       image: "https://api2.sololearn.com/v2/certificates/CC-G5ZCWBF1/image/png?t=638595931432498120",
       link: "https://www.sololearn.com/certificates/CC-G5ZCWBF1",
@@ -125,7 +125,7 @@ const certificates = [
     {
       title: "Introduction to JavaScript",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Web Development",
       image: "https://api2.sololearn.com/v2/certificates/CC-U4WVGRPQ/image/png?t=638597480140183890",
       link: "https://www.sololearn.com/certificates/CC-U4WVGRPQ",
@@ -133,7 +133,7 @@ const certificates = [
     {
       title: "Introduction to CSS",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Web Development",
       image: "https://api2.sololearn.com/v2/certificates/CC-T4FW0T6L/image/png?t=638678515211608360",
       link: "https://www.sololearn.com/certificates/CC-U4WVGRPQ",
@@ -141,7 +141,7 @@ const certificates = [
     {
       title: "Introduction to HTML",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Web Development",
       image: "https://api2.sololearn.com/v2/certificates/CC-M0AEWCSO/image/png?t=638604643713739320",
       link: "https://www.sololearn.com/certificates/CC-M0AEWCSO",
@@ -149,7 +149,7 @@ const certificates = [
     {
       title: "Introduction to C",
       organization: "Sololearn",
-      date: "December 2025",
+      date: "December 2024",
       category: "Programming",
       image: "https://api2.sololearn.com/v2/certificates/CC-FYR8YLCR/image/png?t=638625746253262490",
       link: "https://www.sololearn.com/certificates/CC-FYR8YLCR",
@@ -171,6 +171,14 @@ const certificates = [
       image: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
       link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
       
+    },
+    {
+      title: "Github Copilot Fundamentals",
+      organization: "Simplilearn",
+      date: "May 2025",
+      category: "Technology",
+      image: "https://certificates.simplicdn.net/share/8356658_87089041747516430791.png",
+      link: "https://simpli-web.app.link/e/2iUjh2mktUb",  
     }
 ];
 
