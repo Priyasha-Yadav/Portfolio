@@ -15,7 +15,7 @@ const certificates = [
       organization: "SheKunj",
       date: "March 2025",
       category: "Technology",
-      image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193967/Screenshot_2025-03-29_at_2.01.50_AM_gbemki.png",
+      image: "https://www.shekunj.com/certificate-detail/14352",
       link: "https://www.shekunj.com/certificate-detail/14352",
     },
     {
@@ -23,7 +23,7 @@ const certificates = [
       organization: "SheKunj",
       date: "March 2025",
       category: "Technology",
-      image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193966/Screenshot_2025-03-29_at_2.01.32_AM_iogfis.png",
+      image: "https://www.shekunj.com/certificate-detail/14378",
       link: "https://www.shekunj.com/certificate-detail/14378",
     },
     {
@@ -179,6 +179,14 @@ const certificates = [
       category: "Technology",
       image: "https://certificates.simplicdn.net/share/8356658_87089041747516430791.png",
       link: "https://simpli-web.app.link/e/2iUjh2mktUb",  
+    },
+    {
+      title: "Introduction to the basics of Azure Services",
+      organization: "Simplilearn",
+      date: "June 2025",
+      category: "Cloud",
+      image: "https://certificates.simplicdn.net/share/8356658_87089041747516430791.png",
+      link: "https://simpli-web.app.link/e/wx0dgG5sxUb";
     }
 ];
 
