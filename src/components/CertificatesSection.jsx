@@ -186,8 +186,8 @@ const certificates = [
       date: "June 2025",
       category: "Cloud",
       image: "https://certificates.simplicdn.net/share/8356658_87089041747516430791.png",
-      link: "https://simpli-web.app.link/e/wx0dgG5sxUb";
-    }
+      link: "https://simpli-web.app.link/e/wx0dgG5sxUb",
+    },
 ];
 
 // Create categories for filtering
