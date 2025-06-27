@@ -15,7 +15,7 @@ const certificates = [
       organization: "SheKunj",
       date: "March 2025",
       category: "Technology",
-      image: "https://www.shekunj.com/certificate-detail/14352",
+      image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193966/Screenshot_2025-03-29_at_2.01.32_AM_iogfis.png",
       link: "https://www.shekunj.com/certificate-detail/14352",
     },
     {
@@ -23,7 +23,7 @@ const certificates = [
       organization: "SheKunj",
       date: "March 2025",
       category: "Technology",
-      image: "https://www.shekunj.com/certificate-detail/14378",
+      image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1743193967/Screenshot_2025-03-29_at_2.01.50_AM_gbemki.png",
       link: "https://www.shekunj.com/certificate-detail/14378",
     },
     {
@@ -185,7 +185,7 @@ const certificates = [
       organization: "Simplilearn",
       date: "June 2025",
       category: "Cloud",
-      image: "https://certificates.simplicdn.net/share/8356658_87089041747516430791.png",
+      image: "https://certificates.simplicdn.net/share/8530376_87089041751020573231.png",
       link: "https://simpli-web.app.link/e/wx0dgG5sxUb",
     },
 ];
