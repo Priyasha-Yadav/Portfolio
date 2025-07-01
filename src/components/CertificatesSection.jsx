@@ -213,12 +213,28 @@ const certificates = [
       link: "https://www.linkedin.com/posts/priyasha-yadav_certification-activity-7332734239534190592-djJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFU3zCgBdLbqECY2ju_KmXuidCnV7dtvFc4", 
     },
     {
-      title: "Azure Fundamentals",
-      organization: "Power BI",
+      title: "Power BI Fundamentals",
+      organization: "Rai University X Microsoft",
       date: "April 2025",
       category: "Data Science",
       image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1751382210/Screenshot_2025-07-01_at_8.30.35_PM_zqtzib.png",
       link: "https://www.linkedin.com/posts/priyasha-yadav_certification-activity-7332734239534190592-djJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFU3zCgBdLbqECY2ju_KmXuidCnV7dtvFc4", 
+    },
+    {
+      title: "Getting Started with Amazon DocumentDB",
+      organization: "Simplilearn",
+      date: "July 2025",
+      category: "Cloud",
+      image: "https://certificates.simplicdn.net/share/8553652_89246201751383590688.pdf",
+      link: "https://simpli-web.app.link/e/iyPB0jmrEUb",   
+    },
+    {
+     title: "Deep Dive on Container Security",
+      organization: "Simplilearn",
+      date: "July 2025",
+      category: "Cloud",
+      image: "https://certificates.simplicdn.net/share/8554188_89137501751385500266.pdf",
+      link: "https://simpli-web.app.link/e/ghnvZmDtEUb",    
     }
     
 ];
