@@ -188,6 +188,23 @@ const certificates = [
       image: "https://certificates.simplicdn.net/share/8530376_87089041751020573231.png",
       link: "https://simpli-web.app.link/e/wx0dgG5sxUb",
     },
+    {
+      title: "Container Security",
+      organization: "Simplilearn",
+      date: "July 2025",
+      category: "Cloud",
+      image: "https://certificates.simplicdn.net/share/8530376_87089041751020573231.png",
+      link: "https://simpli-web.app.link/e/wx0dgG5sxUb",
+    },
+    {
+      title: "Gateway Load Balancer",
+      organization: "Simplilearn",
+      date: "June 2025",
+      category: "Cloud",
+      image: "https://certificates.simplicdn.net/share/8548827_89137501751372445491.pdf",
+      link: "https://simpli-web.app.link/e/mCWg3o5dEUb",
+    },
+    
 ];
 
 // Create categories for filtering
