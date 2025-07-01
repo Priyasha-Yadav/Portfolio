@@ -204,6 +204,22 @@ const certificates = [
       image: "https://certificates.simplicdn.net/share/8548827_89137501751372445491.pdf",
       link: "https://simpli-web.app.link/e/mCWg3o5dEUb",
     },
+    {
+      title: "Azure Fundamentals",
+      organization: "Rai University X Microsoft",
+      date: "April 2025",
+      category: "Cloud",
+      image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1751382209/Screenshot_2025-07-01_at_8.30.27_PM_ooileu.png",
+      link: "https://www.linkedin.com/posts/priyasha-yadav_certification-activity-7332734239534190592-djJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFU3zCgBdLbqECY2ju_KmXuidCnV7dtvFc4", 
+    },
+    {
+      title: "Azure Fundamentals",
+      organization: "Power BI",
+      date: "April 2025",
+      category: "Cloud",
+      image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1751382210/Screenshot_2025-07-01_at_8.30.35_PM_zqtzib.png",
+      link: "https://www.linkedin.com/posts/priyasha-yadav_certification-activity-7332734239534190592-djJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFU3zCgBdLbqECY2ju_KmXuidCnV7dtvFc4", 
+    }
     
 ];
 
