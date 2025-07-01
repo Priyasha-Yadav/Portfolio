@@ -216,7 +216,7 @@ const certificates = [
       title: "Azure Fundamentals",
       organization: "Power BI",
       date: "April 2025",
-      category: "Cloud",
+      category: "Data Science",
       image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1751382210/Screenshot_2025-07-01_at_8.30.35_PM_zqtzib.png",
       link: "https://www.linkedin.com/posts/priyasha-yadav_certification-activity-7332734239534190592-djJV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFU3zCgBdLbqECY2ju_KmXuidCnV7dtvFc4", 
     }
