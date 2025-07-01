@@ -19,6 +19,40 @@ const certificates = [
       link: "https://www.shekunj.com/certificate-detail/14352",
     },
     {
+      title: "AWS APAC Solutions Architecture",
+      organization: "Forage",
+      date: "June 2025",
+      category: "Cloud",
+      image: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_sCbgcpTY2ZHS6Qurb_1750028004372_completion_certificate.pdf",
+      link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_sCbgcpTY2ZHS6Qurb_1750028004372_completion_certificate.pdf",
+      
+    },
+    {
+      title: "Cybersecurity Analyst Job Simulation",
+      organization: "Forage",
+      date: "June 2025",
+      category: "Technology",
+      image: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
+      link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
+      
+    },
+    {
+      title: "Github Copilot Fundamentals",
+      organization: "Simplilearn",
+      date: "May 2025",
+      category: "Technology",
+      image: "https://certificates.simplicdn.net/share/8356658_87089041747516430791.png",
+      link: "https://simpli-web.app.link/e/2iUjh2mktUb",  
+    },
+    {
+      title: "Introduction to the basics of Azure Services",
+      organization: "Simplilearn",
+      date: "June 2025",
+      category: "Cloud",
+      image: "https://certificates.simplicdn.net/share/8530376_87089041751020573231.png",
+      link: "https://simpli-web.app.link/e/wx0dgG5sxUb",
+    },
+    {
       title: "Google Ads App",
       organization: "SheKunj",
       date: "March 2025",
@@ -154,40 +188,6 @@ const certificates = [
       image: "https://api2.sololearn.com/v2/certificates/CC-FYR8YLCR/image/png?t=638625746253262490",
       link: "https://www.sololearn.com/certificates/CC-FYR8YLCR",
     },
-       {
-      title: "AWS APAC Solutions Architecture",
-      organization: "Forage",
-      date: "June 2025",
-      category: "Cloud",
-      image: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_sCbgcpTY2ZHS6Qurb_1750028004372_completion_certificate.pdf",
-      link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_sCbgcpTY2ZHS6Qurb_1750028004372_completion_certificate.pdf",
-      
-    },
-    {
-      title: "Cybersecurity Analyst Job Simulation",
-      organization: "Forage",
-      date: "June 2025",
-      category: "Technology",
-      image: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
-      link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_sCbgcpTY2ZHS6Qurb_1750797249275_completion_certificate.pdf",
-      
-    },
-    {
-      title: "Github Copilot Fundamentals",
-      organization: "Simplilearn",
-      date: "May 2025",
-      category: "Technology",
-      image: "https://certificates.simplicdn.net/share/8356658_87089041747516430791.png",
-      link: "https://simpli-web.app.link/e/2iUjh2mktUb",  
-    },
-    {
-      title: "Introduction to the basics of Azure Services",
-      organization: "Simplilearn",
-      date: "June 2025",
-      category: "Cloud",
-      image: "https://certificates.simplicdn.net/share/8530376_87089041751020573231.png",
-      link: "https://simpli-web.app.link/e/wx0dgG5sxUb",
-    },
     {
       title: "Gateway Load Balancer",
       organization: "Simplilearn",
@@ -226,7 +226,15 @@ const certificates = [
       date: "July 2025",
       category: "Cloud",
       image: "https://certificates.simplicdn.net/share/8554188_89137501751385500266.pdf",
-      link: "https://simpli-web.app.link/e/ghnvZmDtEUb",    
+      link: "https://simpli-web.app.link/e/6jMeLAVTEUb",    
+    },
+    {
+     title: "Azure Fundamentals",
+      organization: "Simplilearn",
+      date: "July 2025",
+      category: "Cloud",
+      image: "https://certificates.simplicdn.net/share/8543560_87089041751407134565.pdf",
+      link: "https://simpli-web.app.link/e/oOaorSoTEUb",   
     }
     
 ];
