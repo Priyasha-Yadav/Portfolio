@@ -142,10 +142,10 @@ const ProjectsPage = () => {
       },
         {
         title: "Marvel Booking",
-        description: "A dark-themed movie booking app for marvel.",
+        description: "This is a high-fidelity, interactive prototype designed in Figma for a Marvel-themed movie booking mobile application.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1754385045/Screenshot_2025-08-05_at_2.26.42_PM_icwrw5.png",
         tags: ["UI/UX", "Figma"],
-        url: "https://www.figma.com/design/CfdnRVPt1pdfkpmWtnh9dv/Marvel-Booking?node-id=0-1&t=CjoamivrQBGGHCBL-1"
+        url: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1754385208/Screenshot_2025-08-05_at_2.43.18_PM_arg6sb.png"
       },
       
     ]
