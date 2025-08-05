@@ -11,14 +11,14 @@ const ProjectsPage = () => {
         description: "A dynamic job portal connecting job seekers with recruiters, offering real-time job postings and applications.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166559/Screenshot_2025-03-05_at_2.51.41_PM_uhhicu.png",
         tags: ["MERN", "JWT", "Render", "Netlify", "Multer"],
-        url: "https://jobmentum.com"
+        url: "https://jomentum.netlify.app"
       },
       {
         title: "LeafDaily",
         description: "An AI-powered sustainability tracking platform encouraging eco-friendly habits through gamification.",
         image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         tags: ["Backend", "Node.js", "Express.js", "MongoDB"],
-        url: "https://leafdaily.com"
+        url: "https://github.com/Priyasha-Yadav/leafdaily?tab=readme-ov-file"
       }
     ],
     "APIs": [
@@ -27,74 +27,74 @@ const ProjectsPage = () => {
         description: "REST API for a social media platform with user authentication, posts, likes, and comments.",
         image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         tags: ["Backend", "Node.js", "Express.js", "MongoDB"],
-        url: "https://instagram-api.com"
+        url: "https://github.com/Priyasha-Yadav/Instagram-Inspired-API"
       },
       {
         title: "Students API",
         description: "An API to manage student records, including authentication, CRUD operations, and performance tracking.",
         image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
         tags: ["Backend", "Node.js", "Express.js", "MongoDB"],
-        url: "https://students-api.com"
+        url: "https://github.com/Priyasha-Yadav/Students-API"
       }
     ],
     "Clones": [
-      {
-        title: "Gmail Clone",
-        description: "A functional Gmail replica built using React.js and Firebase for authentication and storage.",
-        image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        tags: ["React.js", "Firebase", "Tailwind CSS", "Redux"],
-        url: "https://gmail-clone.com"
-      },
+      // {
+      //   title: "Gmail Clone",
+      //   description: "A functional Gmail replica built using React.js and Firebase for authentication and storage.",
+      //   image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      //   tags: ["React.js", "Firebase", "Tailwind CSS", "Redux"],
+      //   url: "https://gmail-clone.com"
+      // },
       {
         title: "YouTube Clone",
         description: "A responsive YouTube clone fetching data via YouTube's API with modern UI and video playback.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Youtube.png?raw=true",
         tags: ["React.js", "YouTube API"],
-        url: "https://youtube-clone.com"
+        url: "https://youtube-vite.netlify.app"
       },
       {
         title: "Target E-commerce Static Clone",
         description: "A static front-end clone of Target's e-commerce platform with HTML, CSS, and JavaScript.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166578/Screenshot_2025-03-05_at_11.08.09_AM_iz39v1.png",
         tags: ["CSS", "HTML", "JavaScript"],
-        url: "https://target-clone.com"
+        url: "https://github.com/Priyasha-Yadav/Target"
       }
     ],
     "Mini Projects": [
-      {
-        title: "Tic Tac Toe",
-        description: "A simple yet interactive Tic Tac Toe game built using JavaScript and React.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_2.48.51_PM_sxnozm.png",
-        tags: ["React.js", "JavaScript"],
-        url: "https://tic-tac-toe.com"
-      },
+      // {
+      //   title: "Tic Tac Toe",
+      //   description: "A simple yet interactive Tic Tac Toe game built using JavaScript and React.",
+      //   image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_2.48.51_PM_sxnozm.png",
+      //   tags: ["React.js", "JavaScript"],
+      //   url: "https://tic-tac-toe.com"
+      // },
       {
         title: "Ludo Static Page",
         description: "A visually appealing static page replicating the Ludo board design using HTML & CSS.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/ludo.png?raw=true",
         tags: ["HTML", "CSS"],
-        url: "https://ludo-static.com"
+        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
       {
         title: "Sudoku Game",
         description: "A browser-based Sudoku puzzle with a simple interface and validation logic.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Sudoku.png?raw=true",
         tags: ["JavaScript", "HTML", "CSS"],
-        url: "https://sudoku-game.com"
+        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
       {
         title: "Amazon Landing Page Clone",
         description: "A pixel-perfect clone of Amazon's homepage built using modern front-end technologies.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/amazon.png?raw=true",
         tags: ["CSS", "HTML", "JavaScript"],
-        url: "https://amazon-clone.com"
+        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
       {
         title: "Static Chess",
         description: "A static chess board design with HTML and CSS [using flex], showcasing various chess pieces.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Chess.png?raw=true",
         tags: ["HTML", "CSS"],
-        url: "https://priyasha-yadav.github.io/Task/Frontend_Task/chess.html"
+        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
       {
         title:"Static Kidz World Website",
@@ -110,36 +110,44 @@ const ProjectsPage = () => {
         description: "A sleek, modern Figma design for an eco-friendly lifestyle tracking app with gamification elements.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166572/Screenshot_2025-03-05_at_2.47.56_PM_nubwh9.png",
         tags: ["UI/UX", "Figma", "Dark Mode"],
-        url: "https://www.figma.com/file/LeafDaily"
+        url: "https://www.figma.com/design/rUVgdmJUXLelwqm0oFhEy0/LeafDaily?node-id=0-1&t=tjMwO0Xf8mHdvj7b-1"
       },
       {
         title: "Lapto",
         description: "An intuitive website to display information about laptops.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167805/Screenshot_2025-03-05_at_3.11.24_PM_tdyxpo.png",
         tags: ["UI/UX", "Figma", "Web Design"],
-        url: "https://www.figma.com/file/Lapto"
+        url: "https://www.figma.com/design/gIyQO0jTCwEuxiBdfwyykh/Lapto---Your-Laptop-Companion?node-id=0-1&t=7mM7DDZSITcquwaB-1"
       },
       {
         title: "Jobmentum - Job Portal UI",
         description: "A clean and user-friendly job portal UI/UX design with an easy-to-navigate layout.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_11.06.07_AM_ku7gql.png",
         tags: ["UI/UX", "Figma", "Web Design"],
-        url: "https://www.figma.com/file/Jobmentum"
+        url: "https://www.figma.com/design/rCJvmrMjiTtu9J3uqajM6z/Jobmentum?node-id=0-1&t=u6ocRs6heDdGLKEl-1"
       },
       {
         title:"Instagram UI Clone",
         description: "A Figma design for Instagram's mobile app.",
         image:"https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167375/Screenshot_2025-03-05_at_3.04.38_PM_quoxff.png",
         tags: ["UI/UX", "Figma", "Social Media"],
-        url: ""
+        url: "https://www.figma.com/design/Mak3m2fnwHIzyFoelNSdJU/Instagram-UI-Clone?node-id=0-1&t=kclY5P6yIfyweCVk-1"
       },
       {
         title: "Netflix UI Clone",
         description: "A dark-themed Netflix homepage clone with hover effects.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167228/Screenshot_2025-03-05_at_3.02.47_PM_mqtdrf.png",
         tags: ["UI/UX", "Figma"],
-        url: "https://netflix-clone.com"
-      }
+        url: "https://www.figma.com/design/A5WYSeMi3ffMYJcyzJOq7K/Netflix-UI-Clone?node-id=0-1&t=ldV1rn48DKlNoGZs-1"
+      },
+        {
+        title: "Marvel Booking",
+        description: "A dark-themed movie booking app for marvel.",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167228/Screenshot_2025-03-05_at_3.02.47_PM_mqtdrf.png",
+        tags: ["UI/UX", "Figma"],
+        url: "https://www.figma.com/design/CfdnRVPt1pdfkpmWtnh9dv/Marvel-Booking?node-id=0-1&t=CjoamivrQBGGHCBL-1"
+      },
+      
     ]
   };
 
