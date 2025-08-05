@@ -101,7 +101,7 @@ const ProjectsPage = () => {
         description: "A static website for kids with colorful design elements and interactive animations.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/kidz_world_1.png?raw=true",
         tags: ["HTML", "CSS"],
-        url: "https://priyasha-yadav.github.io/Task/Frontend_Task/kidz_world.html"
+        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       }
     ],
     "Figma Projects": [
@@ -143,7 +143,7 @@ const ProjectsPage = () => {
         {
         title: "Marvel Booking",
         description: "A dark-themed movie booking app for marvel.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167228/Screenshot_2025-03-05_at_3.02.47_PM_mqtdrf.png",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1754385045/Screenshot_2025-08-05_at_2.26.42_PM_icwrw5.png",
         tags: ["UI/UX", "Figma"],
         url: "https://www.figma.com/design/CfdnRVPt1pdfkpmWtnh9dv/Marvel-Booking?node-id=0-1&t=CjoamivrQBGGHCBL-1"
       },
