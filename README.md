@@ -1,4 +1,4 @@
-# 🌟 Priyasha Yadav — Portfolio Website
+# ✨ Priyasha Yadav — Portfolio Website
 
 > A digital garden of creativity, caffeine, and code ☕💻✨
 
@@ -6,7 +6,7 @@ Welcome to the GitHub repo for **my personal portfolio website** — a little pi
 
 ## 🔮 Live Preview
 
-👉 [Visit My Portfolio](https://priyasha-yadav.vercel.app) ← *Click if you're curious*
+ [Visit Portfolio](https://priyasha-yadav.vercel.app)
 
 ## 🖼️ Portfolio Sneak Peek
 
@@ -44,8 +44,10 @@ This website is built using a cocktail of the web's finest tools:
 - **Frontend:** React.js + Tailwind CSS + Vite (blazing fast and aesthetic, like a coding racecar 🏎️💨)
 - **Animations:** Framer Motion (because why scroll when you can *float*?)
 - **Icons & Illustrations:** Lucide Icons, Heroicons, and lovingly crafted SVG magic
+- **Hosting**: Vercel
 
-## 💼 What's Inside?
+
+## What's Inside?
 
 - An **About Me** section that tells my story — full of learning curves and curly braces.
 - A **Projects** gallery that showcases what I’ve been building, breaking, and fixing again.
