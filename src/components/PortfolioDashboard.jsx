@@ -11,13 +11,13 @@ import KonamiEasterEgg from './KonamiEasterEgg.jsx';
 const PortfolioDashboard = () => {
   const phoneNumber = "918733012811";
   
-  const [bgColor, setBgColor] = useState(localStorage.getItem('preferredBgColor') || 'pink');
+  const [bgColor, setBgColor] = useState(localStorage.getItem('preferredBgColor') || 'black');
 
   // Listen for changes to localStorage
   useEffect(() => {
     // Update state when localStorage changes
     const handleStorageChange = () => {
-      const updatedColor = localStorage.getItem('preferredBgColor') || 'pink';
+      const updatedColor = localStorage.getItem('preferredBgColor') || 'black';
       setBgColor(updatedColor);
     };
 

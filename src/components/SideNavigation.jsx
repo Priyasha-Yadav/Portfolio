@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, User, Briefcase, MessageSquare, Award, X, Github, Mail, Settings, BookCheck, Code2, ChevronRight } from 'lucide-react';
+import { Home, User, Briefcase, MessageSquare, Award, X, Github, Mail, Settings, BookCheck, Code2, ChevronRight, Utensils } from 'lucide-react';
 
 const socialLinks = {
     github: "https://github.com/Priyasha-Yadav",
@@ -8,7 +8,8 @@ const socialLinks = {
     leetcode: "https://leetcode.com/u/Priyasha_Yadav/",
     hackerrank: "https://www.hackerrank.com/profile/priyasha_yadav_1",
     sololearn: "https://www.sololearn.com/en/profile/32474399",
-    mail: "mailto:priyasha.yadav.cg@gmail.com"
+    mail: "mailto:priyasha.yadav.cg@gmail.com",
+    codechef: "https://www.codechef.com/users/priyasha_yadav",
 };
 
 const colorOptions = [
@@ -74,6 +75,9 @@ const SideNavigation = () => {
                 window.open(socialLinks.leetcode, '_blank');
             } else if (section === 'sololearn') {
                 window.open(socialLinks.sololearn, '_blank');
+            }
+            else if (section === 'codechef') {
+                window.open(socialLinks.codechef, '_blank');
             } else {
                 document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection(section);
@@ -141,14 +145,15 @@ const SideNavigation = () => {
 
     const navigationItems = [
         { icon: <Home size={22} />, section: 'home', label: 'Home' },
-        { icon: <User size={22} />, section: 'about', label: 'About Me' },
         { icon: <Briefcase size={22} />, section: 'projects', label: 'Projects' },
         { icon: <MessageSquare size={22} />, section: 'skills', label: 'Skills' },
         { icon: <Award size={22} />, section: 'certificates', label: 'Certificates' },
+        { icon: <User size={22} />, section: 'about', label: 'About Me' },
+        { icon: <Mail size={22} />, section: 'contact', label: 'Contact Me' },
         { icon: <Github size={22} />, section: 'github', label: 'GitHub' },
         { icon: <BookCheck size={22} />, section: 'sololearn', label: 'Sololearn' },
         { icon: <Code2 size={22} />, section: 'leetcode', label: 'LeetCode' },
-        { icon: <Mail size={22} />, section: 'contact', label: 'Contact Me' },
+        { icon: <Utensils size={22} />, section: 'codechef', label: 'CodeChef' },
         { icon: <Settings size={22} />, section: 'settings', label: 'Settings' },
     ];
 

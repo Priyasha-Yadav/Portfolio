@@ -97,7 +97,7 @@ const ProjectsPage = () => {
         url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
       {
-        title:"Static Kidz World Website",
+        title: "Static Kidz World Website",
         description: "A static website for kids with colorful design elements and interactive animations.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/kidz_world_1.png?raw=true",
         tags: ["HTML", "CSS"],
@@ -127,9 +127,9 @@ const ProjectsPage = () => {
         url: "https://www.figma.com/design/rCJvmrMjiTtu9J3uqajM6z/Jobmentum?node-id=0-1&t=u6ocRs6heDdGLKEl-1"
       },
       {
-        title:"Instagram UI Clone",
+        title: "Instagram UI Clone",
         description: "A Figma design for Instagram's mobile app.",
-        image:"https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167375/Screenshot_2025-03-05_at_3.04.38_PM_quoxff.png",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167375/Screenshot_2025-03-05_at_3.04.38_PM_quoxff.png",
         tags: ["UI/UX", "Figma", "Social Media"],
         url: "https://www.figma.com/design/Mak3m2fnwHIzyFoelNSdJU/Instagram-UI-Clone?node-id=0-1&t=kclY5P6yIfyweCVk-1"
       },
@@ -140,24 +140,24 @@ const ProjectsPage = () => {
         tags: ["UI/UX", "Figma"],
         url: "https://www.figma.com/design/A5WYSeMi3ffMYJcyzJOq7K/Netflix-UI-Clone?node-id=0-1&t=ldV1rn48DKlNoGZs-1"
       },
-        {
+      {
         title: "Marvel Booking",
         description: "This is a high-fidelity, interactive prototype designed in Figma for a Marvel-themed movie booking mobile application.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1754385208/Screenshot_2025-08-05_at_2.43.18_PM_arg6sb.png",
         tags: ["UI/UX", "Figma"],
         url: "https://www.figma.com/design/CfdnRVPt1pdfkpmWtnh9dv/Marvel-Booking?node-id=189-956&t=loSTGkc4JmIMUcBh-1"
       },
-      
+
     ]
   };
 
   // Get all categories including "All"
   const categories = ["All", ...Object.keys(categorizedProjects)];
-  
+
   // Filter projects based on active category
-  const filteredProjects = activeCategory === "All" 
-      ? Object.values(categorizedProjects).flat() 
-      : categorizedProjects[activeCategory] || [];
+  const filteredProjects = activeCategory === "All"
+    ? Object.values(categorizedProjects).flat()
+    : categorizedProjects[activeCategory] || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
@@ -198,11 +198,10 @@ const ProjectsPage = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${
-                  activeCategory === category
+                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${activeCategory === category
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/20"
                     : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -211,11 +210,15 @@ const ProjectsPage = () => {
         </div>
 
         {/* Projects grid with animations */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <div 
-              key={index} 
-              className="group relative overflow-hidden rounded-xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10"
+            <a
+              key={index}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block relative overflow-hidden rounded-xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10"
               style={{
                 animationDelay: `${index * 0.1}s`,
               }}
@@ -227,25 +230,10 @@ const ProjectsPage = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
-                
-                {/* Project title overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3 className="text-xl font-bold text-white tracking-tight">{project.title}</h3>
                 </div>
-                
-                {/* External link button */}
-                <a 
-                  href={project.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="absolute top-4 right-4 w-8 h-8 bg-black/40 hover:bg-purple-600 rounded-full flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
-                  aria-label={`Visit ${project.title}`}
-                >
-                  <ExternalLink size={14} className="text-white" />
-                </a>
               </div>
-              
-              {/* Project description and tags */}
               <div className="p-4">
                 <p className="text-sm text-gray-300">{project.description}</p>
                 <div className="mt-2 flex flex-wrap gap-2">
@@ -254,7 +242,8 @@ const ProjectsPage = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
+
           ))}
         </div>
       </div>
