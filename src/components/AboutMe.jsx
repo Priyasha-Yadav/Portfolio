@@ -79,9 +79,10 @@ const AboutMe = () => {
                     whileHover={{ scale: 1.02 }}
                 >
                     <p className="text-lg leading-loose tracking-wide text-gray-300 lg:text-2xl lg:leading-loose">
-                        Hi, I'm Priyasha, a passionate developer who loves building things from scratch and solving problems.
-                        I specialize in front-end and full-stack development with expertise in modern web technologies.
-                        Currently, I am learning more about AI and machine learning. If you're here, congrats! You just found the most unpredictable dev you'll ever meet.
+                        Hi, I'm Priyasha — a passionate developer who loves building, breaking, and solving things.
+                        I specialize in front-end and full-stack development, with a strong grip on modern web technologies.
+                        Right now, I'm diving deeper into my core subjects to strengthen my foundation.
+                        If you've made it here, congrats — you've just found the most unpredictable dev you'll ever meet.
                     </p>
                 </motion.div>
             </div>
@@ -132,10 +133,10 @@ const AboutMe = () => {
                             <ul className="text-gray-300 space-y-8 text-base">
                                 {[
                                     { icon: "🎹", text: "Playing keyboard like no one's watching (but hoping they are)" },
-                                    { icon: "📚", text: "Devouring tech blogs and books like they're plot twists" },
+                                    { icon: "📚", text: "Binge-reading books like every chapter holds a cliffhanger" },
                                     { icon: "🎨", text: "Obsessing over VSCode themes (it's an art form, okay?)" },
                                     { icon: "🤖", text: "Making AI do silly things (and smart things too!)" },
-                                    { icon: "🧪", text: "Testing new dev tools like a mad scientist" },
+                                    { icon: "🧪", text: "Testing new chrome extensions like a mad scientist" },
                                 ].map((hobby, idx) => (
                                     <motion.li
                                         key={idx}
@@ -240,7 +241,7 @@ const AboutMe = () => {
 
             {/* Fun Quotes */}
             <motion.div
-                className="mt-12 text-center"
+                className="mt-18 text-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -263,12 +264,12 @@ const AboutMe = () => {
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
                         transition={{
-                          duration: 1,
-                          ease: "easeInOut"
+                            duration: 1,
+                            ease: "easeInOut"
                         }}
                         style={{
-                          textShadow: "0 0 6px #a855f7",
-                          animation: "floaty 5s ease-in-out infinite"
+                            textShadow: "0 0 6px #a855f7",
+                            animation: "floaty 5s ease-in-out infinite"
                         }}
                     >
                         {quotes[currentQuote]}

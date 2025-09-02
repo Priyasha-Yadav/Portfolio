@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, ChevronRight } from "lucide-react";
+import { image, title } from 'framer-motion/client';
 
 const ProjectsPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -13,15 +14,16 @@ const ProjectsPage = () => {
         tags: ["MERN", "JWT", "Render", "Netlify", "Multer"],
         url: "https://jomentum.netlify.app"
       },
-      {
-        title: "LeafDaily",
-        description: "An AI-powered sustainability tracking platform encouraging eco-friendly habits through gamification.",
-        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        tags: ["Backend", "Node.js", "Express.js", "MongoDB"],
-        url: "https://github.com/Priyasha-Yadav/leafdaily?tab=readme-ov-file"
-      }
+
     ],
     "APIs": [
+      {
+        title: "LeafDaily",
+        description: "API [Eco points] sustainability tracking platform encouraging eco-friendly habits through gamification.",
+        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        tags: ["Backend", "Node.js", "Express.js"],
+        url: "https://documenter.getpostman.com/view/39189648/2sAYX3sjFp"
+      },
       {
         title: "Instagram-Inspired API",
         description: "REST API for a social media platform with user authentication, posts, likes, and comments.",
@@ -57,17 +59,17 @@ const ProjectsPage = () => {
         description: "A static front-end clone of Target's e-commerce platform with HTML, CSS, and JavaScript.",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166578/Screenshot_2025-03-05_at_11.08.09_AM_iz39v1.png",
         tags: ["CSS", "HTML", "JavaScript"],
-        url: "https://github.com/Priyasha-Yadav/Target"
+        url: "https://targetclonecg.netlify.app"
       }
     ],
     "Mini Projects": [
-      // {
-      //   title: "Tic Tac Toe",
-      //   description: "A simple yet interactive Tic Tac Toe game built using JavaScript and React.",
-      //   image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_2.48.51_PM_sxnozm.png",
-      //   tags: ["React.js", "JavaScript"],
-      //   url: "https://tic-tac-toe.com"
-      // },
+      {
+        title: "Tic Tac Toe",
+        description: "A simple yet interactive Tic Tac Toe game built using HTML CSS JavaScript.",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_2.48.51_PM_sxnozm.png",
+        tags: ["HTML", "CSS", "JavaScript"],
+        url: "https://tic-tac-toe-py.netlify.app"
+      },
       {
         title: "Ludo Static Page",
         description: "A visually appealing static page replicating the Ludo board design using HTML & CSS.",
@@ -76,19 +78,19 @@ const ProjectsPage = () => {
         url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
       {
-        title: "Sudoku Game",
-        description: "A browser-based Sudoku puzzle with a simple interface and validation logic.",
+        title: "Static Sudoku",
+        description: "A visually appealing static page replicating the Sudoku board design using HTML & CSS.",
         image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Sudoku.png?raw=true",
         tags: ["JavaScript", "HTML", "CSS"],
         url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
-      {
-        title: "Amazon Landing Page Clone",
-        description: "A pixel-perfect clone of Amazon's homepage built using modern front-end technologies.",
-        image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/amazon.png?raw=true",
-        tags: ["CSS", "HTML", "JavaScript"],
-        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
-      },
+      // {
+      //   title: "Amazon Landing Page Clone",
+      //   description: "A pixel-perfect clone of Amazon's homepage built using modern front-end technologies.",
+      //   image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/amazon.png?raw=true",
+      //   tags: ["CSS", "HTML", "JavaScript"],
+      //   url: "https://github.com/Priyasha-Yadav/HTML"
+      // },
       {
         title: "Static Chess",
         description: "A static chess board design with HTML and CSS [using flex], showcasing various chess pieces.",
@@ -96,12 +98,26 @@ const ProjectsPage = () => {
         tags: ["HTML", "CSS"],
         url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
       },
+      // {
+      //   title: "Static Kidz World Website",
+      //   description: "A static website for kids with colorful design elements and interactive animations.",
+      //   image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/kidz_world_1.png?raw=true",
+      //   tags: ["HTML", "CSS"],
+      //   url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
+      // },
       {
-        title: "Static Kidz World Website",
-        description: "A static website for kids with colorful design elements and interactive animations.",
-        image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/kidz_world_1.png?raw=true",
-        tags: ["HTML", "CSS"],
-        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
+        title: "Calculator-2.0",
+        description: "A sleek, calculator made using HTML, CSS, and JavaScript with basic arithmetic operations.",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1756798060/Screenshot_2025-09-02_at_12.57.31_PM_h687hk.png",
+        tags: ["HTML", "CSS", "JavaScript"],
+        url: "https://calc-two.netlify.app"
+      },
+      {
+        title: "Calculator-1.0",
+        description: "A simple calculator made using HTML, CSS, and JavaScript with basic arithmetic operations.",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1756797843/Screenshot_2025-09-02_at_12.47.31_PM_j8ok24.png",
+        tags: ["HTML", "CSS", "JavaScript"],
+        url: "https://calc1-one.netlify.app"
       }
     ],
     "Figma Projects": [
@@ -199,8 +215,8 @@ const ProjectsPage = () => {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${activeCategory === category
-                    ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/20"
-                    : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70"
+                  ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/20"
+                  : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70"
                   }`}
               >
                 {category}
