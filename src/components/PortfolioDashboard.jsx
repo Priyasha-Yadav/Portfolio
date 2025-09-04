@@ -82,7 +82,7 @@ const PortfolioDashboard = () => {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="px-6 py-2 bg-[#08081A] text-white rounded-full hover:bg-[#111122] hover:opacity-90 transition-colors z-10"
+              className="px-6 py-2 bg-[#08081A] text-white rounded-full hover:bg-[#111122] hover:opacity-90 transition-colors z-10 my-4"
             >
               Contact Me
             </button>
