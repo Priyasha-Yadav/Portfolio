@@ -162,7 +162,7 @@ const SideNavigation = () => {
             {/* Expand/collapse toggle button */}
             <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="fixed right-6 top-6 z-50 bg-black/80 backdrop-blur-md p-2 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 sm:right-24"
+                className="fixed right-6 top-6 z-50 sm:right-[calc(100%+1rem)] bg-black/80 backdrop-blur-md p-2 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300"
                 aria-label={isExpanded ? "Collapse navigation" : "Expand navigation"}
             >
                 <ChevronRight
@@ -179,9 +179,16 @@ const SideNavigation = () => {
             )}
 
 
-            <div className={`fixed right-0 top-0 h-full z-40 transition-all duration-500 ease-in-out ${isExpanded ? 'translate-x-0' : 'translate-x-full'} sm:translate-x-0 sm:w-20 ${isExpanded ? 'sm:w-50' : ''} bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center`}
+            <div className={`
+    fixed right-0 top-0 h-full z-40
+    transition-all duration-500 ease-in-out
+    ${isExpanded ? 'translate-x-0' : 'translate-x-full'}
+    sm:translate-x-0
+    ${isExpanded ? 'sm:w-64' : 'sm:w-20'}
+    w-64
+    bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center
+`}
             >
-
                 <div className="py-8 px-4 flex flex-col items-center gap-6">
                     {navigationItems.map(({ icon, section, label }) => (
                         <button
