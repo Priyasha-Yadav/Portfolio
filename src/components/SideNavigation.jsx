@@ -162,7 +162,7 @@ const SideNavigation = () => {
             {/* Expand/collapse toggle button */}
             <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="fixed right-6 top-6 z-50 bg-black/80 backdrop-blur-md p-2 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300"
+                className="fixed right-6 top-6 z-50 bg-black/80 backdrop-blur-md p-2 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300 sm:right-24"
                 aria-label={isExpanded ? "Collapse navigation" : "Expand navigation"}
             >
                 <ChevronRight
@@ -170,11 +170,18 @@ const SideNavigation = () => {
                     className={`text-white transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
                 />
             </button>
+            {/* Mobile Overlay */}
+            {isExpanded && (
+                <div
+                    className="fixed inset-0 z-30 bg-black/50 sm:hidden"
+                    onClick={() => setIsExpanded(false)}
+                ></div>
+            )}
 
-            <div
-                className={`fixed right-0 top-0 h-full z-40 transition-all duration-500 ease-in-out ${isExpanded ? 'w-50' : 'w-20'
-                    } bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center`}
+
+            <div className={`fixed right-0 top-0 h-full z-40 transition-all duration-500 ease-in-out ${isExpanded ? 'translate-x-0' : 'translate-x-full'} sm:translate-x-0 sm:w-20 ${isExpanded ? 'sm:w-50' : ''} bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center`}
             >
+
                 <div className="py-8 px-4 flex flex-col items-center gap-6">
                     {navigationItems.map(({ icon, section, label }) => (
                         <button
