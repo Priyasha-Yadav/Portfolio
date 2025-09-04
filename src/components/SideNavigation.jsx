@@ -24,12 +24,11 @@ const colorOptions = [
 
 ];
 
-const SideNavigation = () => {
+const SideNavigation = ({ isExpanded, setIsExpanded }) => {
     const [activeSection, setActiveSection] = useState('home');
     const [highlighted, setHighlighted] = useState('');
     const [activeColor, setActiveColor] = useState(colorOptions[0].value);
     const [showColorOptions, setShowColorOptions] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
     const [showTooltip, setShowTooltip] = useState('');
     const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
     const [tooltipOpacity, setTooltipOpacity] = useState(0);
@@ -143,6 +142,7 @@ const SideNavigation = () => {
         };
     }, [tooltipTimer]);
 
+
     const navigationItems = [
         { icon: <Home size={22} />, section: 'home', label: 'Home' },
         { icon: <Briefcase size={22} />, section: 'projects', label: 'Projects' },
@@ -180,15 +180,14 @@ const SideNavigation = () => {
 
 
             <div className={`
-    fixed right-0 top-0 h-full z-40
-    transition-all duration-500 ease-in-out
-    ${isExpanded ? 'translate-x-0' : 'translate-x-full'}
-    sm:translate-x-0
-    ${isExpanded ? 'sm:w-64' : 'sm:w-20'}
-    w-64
-    bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center
-`}
-            >
+  fixed right-0 top-0 h-full z-40
+  transition-all duration-500 ease-in-out
+  ${isExpanded ? 'translate-x-0' : 'translate-x-full'}
+  sm:translate-x-0
+  ${isExpanded ? 'sm:w-64 lg:w-72 xl:w-80' : 'sm:w-20'}
+  w-64
+  bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center
+`} >
                 <div className="py-8 px-4 flex flex-col items-center gap-6">
                     {navigationItems.map(({ icon, section, label }) => (
                         <button

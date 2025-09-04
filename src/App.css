@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@media (min-width: 640px) {
+  .main-content {
+    margin-right: 5rem; /* collapsed width: 20 */
+  }
+}
+@media (min-width: 1024px) {
+  .main-content.expanded {
+    margin-right: 18rem; /* expanded lg width: 72 */
+  }
+}
+@media (min-width: 1280px) {
+  .main-content.expanded {
+    margin-right: 20rem; /* expanded xl width: 80 */
+  }
+}
+

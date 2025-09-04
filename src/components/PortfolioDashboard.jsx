@@ -10,7 +10,7 @@ import KonamiEasterEgg from './KonamiEasterEgg.jsx';
 
 const PortfolioDashboard = () => {
   const phoneNumber = "918733012811";
-  
+  const [isExpanded, setIsExpanded] = useState(false);
   const [bgColor, setBgColor] = useState(localStorage.getItem('preferredBgColor') || 'black');
 
   // Listen for changes to localStorage
@@ -64,8 +64,9 @@ const PortfolioDashboard = () => {
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* Side Navigation */}
-      <SideNavigation />
-      
+<SideNavigation isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+        <div className={`main-content ${isExpanded ? 'expanded' : ''}`}>
+
       {/* Main Content */}
       <div className="container mx-auto px-6 py-12" id='home'>
         {/* Header */}
@@ -144,7 +145,7 @@ const PortfolioDashboard = () => {
         href={`https://wa.me/${phoneNumber}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-25 z-10 bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition-all"
+className="fixed bottom-8 right-25 z-10 bg-green-500 p-2 rounded-full shadow-lg hover:bg-green-600 transition-all"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -157,6 +158,7 @@ const PortfolioDashboard = () => {
           />
         </svg>
       </a>
+    </div>
     </div>
   );
 };
