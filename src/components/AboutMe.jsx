@@ -207,6 +207,8 @@ const AboutMe = () => {
                             src={img}
                             alt="Priyasha Yadav"
                             className="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
                             animate={{
                                 x: position.x,
                                 y: position.y,

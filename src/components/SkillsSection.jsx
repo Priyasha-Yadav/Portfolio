@@ -142,6 +142,8 @@ const SkillsSection = () => {
             key={index}
             src={item.src}
             className="absolute w-20 h-20 p-2 bg-white/10 rounded-full shadow-md backdrop-blur-sm"
+            loading="lazy"
+            decoding="async"
             style={{ top: item.y, left: item.x }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: [10, -10, 10] }}

@@ -26,7 +26,7 @@ const Hero = () => {
             className="px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 text-white rounded-full hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            data-scroll-target="projects"
           >
             View Projects
           </motion.button>
@@ -36,7 +36,7 @@ const Hero = () => {
             className="px-6 py-3 bg-transparent border border-gray-700 text-white rounded-full hover:bg-gray-800/30 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            data-scroll-target="about"
           >
             About Me
           </motion.button>
@@ -59,6 +59,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.1 * i }}
+              role="presentation"
             />
           ))}
         </div>
