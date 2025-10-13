@@ -164,6 +164,8 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="fixed right-6 top-6 z-50 sm:right-[calc(100%+1rem)] bg-black/80 backdrop-blur-md p-2 rounded-full shadow-lg hover:bg-gray-800 transition-all duration-300"
                 aria-label={isExpanded ? "Collapse navigation" : "Expand navigation"}
+                aria-expanded={isExpanded}
+                data-tour-target="side-nav-toggle"
             >
                 <ChevronRight
                     size={20}
@@ -188,7 +190,7 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
   w-64
   bg-black/30 backdrop-blur-md border-l border-white/10 shadow-2xl flex flex-col justify-center
 `} >
-                <div className="py-8 px-4 flex flex-col items-center gap-6">
+                <div className="py-8 px-4 flex flex-col items-center gap-6" data-tour-target="side-navigation">
                     {navigationItems.map(({ icon, section, label }) => (
                         <button
                             key={section}
@@ -241,7 +243,7 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
             {/* Color options panel */}
             {showColorOptions && (
                 <div className={`fixed right-0 top-0 h-full w-100 z-30 bg-black/80 backdrop-blur-lg border-l border-white/10 shadow-2xl transform transition-transform duration-500 ease-in-out ${showColorOptions ? 'translate-x-0' : 'translate-x-full'
-                    }`}>
+                    }`} data-tour-target="settings-panel">
                     <div className="p-6 pr-20 h-full flex flex-col">
                         <div className="flex justify-between items-center mb-6">
                             <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Settings</h3>

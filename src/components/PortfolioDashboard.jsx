@@ -8,6 +8,8 @@ import ContactForm from './ContactForm';
 import Hero from './Hero';
 import CertificatesSection from './CertificatesSection.jsx';
 import KonamiEasterEgg from './KonamiEasterEgg.jsx';
+import { GuidedTourProvider } from './GuidedTourProvider.jsx';
+import GuidedTourOverlay from './GuidedTourOverlay.jsx';
 
 const PortfolioDashboard = () => {
   const phoneNumber = '918733012811';
@@ -99,21 +101,23 @@ const PortfolioDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white relative">
-      <SideNavigation isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
-      <div className={`main-content ${isExpanded ? 'expanded' : ''}`}>
-        <div className="container mx-auto px-6 py-12" id="home">
-          {isScrollTopVisible && (
-            <motion.button
-              type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="fixed bottom-8 right-4 z-40 h-12 w-12 rounded-full bg-gradient-to-r from-red-500 to-purple-600 shadow-lg shadow-red-500/40 hover:shadow-purple-500/40 transition-transform duration-300 hover:-translate-y-1"
-              aria-label="Scroll back to top"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              ↑
-            </motion.button>
+    <GuidedTourProvider>
+      <div className="min-h-screen bg-black text-white relative">
+        <GuidedTourOverlay />
+        <SideNavigation isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+        <div className={`main-content ${isExpanded ? 'expanded' : ''}`}>
+          <div className="container mx-auto px-6 py-12" id="home">
+            {isScrollTopVisible && (
+              <motion.button
+                type="button"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="fixed bottom-8 right-4 z-40 h-12 w-12 rounded-full bg-gradient-to-r from-red-500 to-purple-600 shadow-lg shadow-red-500/40 hover:shadow-purple-500/40 transition-transform duration-300 hover:-translate-y-1"
+                aria-label="Scroll back to top"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                ↑
+              </motion.button>
           )}
           <header className="flex justify-between items-center mb-16">
             <h1 className="text-3xl font-light">
@@ -191,6 +195,7 @@ const PortfolioDashboard = () => {
         </a>
       </div>
     </div>
+      </GuidedTourProvider>
   );
 };
 

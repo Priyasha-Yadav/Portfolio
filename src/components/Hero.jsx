@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 
+import { useGuidedTour } from './GuidedTourProvider.jsx';
+
 const Hero = () => {
+  const { startTour } = useGuidedTour();
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32">
       {/* Text Section */}
@@ -21,6 +25,17 @@ const Hero = () => {
           But hey, at least it compiles… most of the time.
         </p>
         <div className="flex items-center gap-4 pt-4">
+          {/* Button to start the guided tour */}
+          <motion.button
+            className="px-6 py-3 bg-transparent border border-gray-700 text-white rounded-full hover:bg-gray-800/30 transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={startTour}
+            data-tour-launcher="true"
+          >
+            Take the Tour
+          </motion.button>
+
           {/* Button to scroll to Projects */}
           <motion.button
             className="px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 text-white rounded-full hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300"
