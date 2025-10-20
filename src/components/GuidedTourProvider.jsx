@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { guidedTourSteps } from './guidedTourSteps.js';
+import { guidedTourSteps } from './guidedTourSteps.jsx';
 
 const GuidedTourContext = createContext(null);
 

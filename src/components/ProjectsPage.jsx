@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { ExternalLink, ChevronRight } from "lucide-react";
-import { image, title } from 'framer-motion/client';
 
 const ProjectsPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");

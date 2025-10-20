@@ -44,7 +44,7 @@ This website is built using a cocktail of the web's finest tools:
 - **Frontend:** React.js + Tailwind CSS + Vite (blazing fast and aesthetic, like a coding racecar 🏎️💨)
 - **Animations:** Framer Motion (because why scroll when you can *float*?)
 - **Icons & Illustrations:** Lucide Icons, Heroicons, and lovingly crafted SVG magic
-- **Hosting**: Vercel
+- **Form Handling:** EmailJS for contact form functionality
 
 
 ## What's Inside?

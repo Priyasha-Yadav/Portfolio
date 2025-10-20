@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem; /* Adjust this value as needed */
 }
 
 @media (min-width: 640px) {

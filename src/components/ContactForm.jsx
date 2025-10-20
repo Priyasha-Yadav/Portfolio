@@ -7,6 +7,12 @@ const ContactForm = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [errors, setErrors] = useState({});
 
     useEffect(() => {
         const onScroll = () => {
@@ -19,8 +25,50 @@ const ContactForm = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.name.trim()) {
+            newErrors.name = 'Name is required';
+        } else if (formData.name.trim().length < 2) {
+            newErrors.name = 'Name must be at least 2 characters';
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+        }
+
+        if (!formData.message.trim()) {
+            newErrors.message = 'Message is required';
+        } else if (formData.message.trim().length < 10) {
+            newErrors.message = 'Message must be at least 10 characters';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+        // Clear error when user starts typing
+        if (errors[name]) {
+            setErrors(prev => ({
+                ...prev,
+                [name]: ''
+            }));
+        }
+    };
+
     const sendEmail = (e) => {
         e.preventDefault();
+
+        if (!validateForm()) return;
 
         if (!form.current) return;
 
@@ -41,7 +89,9 @@ const ContactForm = () => {
                         success: true,
                         message: "Message sent successfully! I'll get back to you soon."
                     });
-                    form.current?.reset();
+                    // Reset form data and errors
+                    setFormData({ name: '', email: '', message: '' });
+                    setErrors({});
                 },
                 (error) => {
                     console.log("Email failed to send:", error.text);
@@ -132,39 +182,75 @@ const ContactForm = () => {
                         </motion.div>
                     ) : null}
 
-                    <form ref={form} onSubmit={sendEmail} className="space-y-4">
+                    <form ref={form} onSubmit={sendEmail} className="space-y-4" noValidate>
                         {/* Form Fields (Name, Email, Message) */}
                         <div>
-                            <label className="block text-gray-300 font-medium mb-2">Name</label>
+                            <label htmlFor="name" className="block text-gray-300 font-medium mb-2">Name</label>
                             <input
                                 type="text"
+                                id="name"
                                 name="name"
+                                value={formData.name}
+                                onChange={handleInputChange}
                                 required
-                                className="w-full px-4 py-2 rounded-lg bg-gray-700/50 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className={`w-full px-4 py-2 rounded-lg bg-gray-700/50 border text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors ${
+                                    errors.name ? 'border-red-500 focus:ring-red-500' : 'border-gray-600'
+                                }`}
                                 placeholder="Your Name"
+                                aria-describedby={errors.name ? "name-error" : undefined}
+                                aria-invalid={errors.name ? "true" : "false"}
                             />
+                            {errors.name && (
+                                <p id="name-error" className="text-red-400 text-sm mt-1" role="alert">
+                                    {errors.name}
+                                </p>
+                            )}
                         </div>
 
                         <div>
-                            <label className="block text-gray-300 font-medium mb-2">Email</label>
+                            <label htmlFor="email" className="block text-gray-300 font-medium mb-2">Email</label>
                             <input
                                 type="email"
+                                id="email"
                                 name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
                                 required
-                                className="w-full px-4 py-2 rounded-lg bg-gray-700/50 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className={`w-full px-4 py-2 rounded-lg bg-gray-700/50 border text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors ${
+                                    errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-600'
+                                }`}
                                 placeholder="Your Email"
+                                aria-describedby={errors.email ? "email-error" : undefined}
+                                aria-invalid={errors.email ? "true" : "false"}
                             />
+                            {errors.email && (
+                                <p id="email-error" className="text-red-400 text-sm mt-1" role="alert">
+                                    {errors.email}
+                                </p>
+                            )}
                         </div>
 
                         <div>
-                            <label className="block text-gray-300 font-medium mb-2">Message</label>
+                            <label htmlFor="message" className="block text-gray-300 font-medium mb-2">Message</label>
                             <textarea
+                                id="message"
                                 name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
                                 required
                                 rows={4}
-                                className="w-full px-4 py-2 rounded-lg bg-gray-700/50 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className={`w-full px-4 py-2 rounded-lg bg-gray-700/50 border text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors resize-none ${
+                                    errors.message ? 'border-red-500 focus:ring-red-500' : 'border-gray-600'
+                                }`}
                                 placeholder="Write your message here..."
+                                aria-describedby={errors.message ? "message-error" : undefined}
+                                aria-invalid={errors.message ? "true" : "false"}
                             />
+                            {errors.message && (
+                                <p id="message-error" className="text-red-400 text-sm mt-1" role="alert">
+                                    {errors.message}
+                                </p>
+                            )}
                         </div>
 
                         <motion.button
