@@ -1,2 +1,3 @@
+Sitemap: https://priyasha-yadav.vercel.app/sitemap.xml
 User-agent: *
 Allow: /

@@ -4,166 +4,179 @@ const ProjectsPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categorizedProjects = {
-    "Full-Stack Projects": [
+    "Full‑Stack Projects": [
       {
-        title: "Jobmentum [ Job Portal ]",
-        description: "A dynamic job portal connecting job seekers with recruiters, offering real-time job postings and applications.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166559/Screenshot_2025-03-05_at_2.51.41_PM_uhhicu.png",
-        tags: ["MERN", "JWT", "Render", "Netlify", "Multer"],
-        url: "https://jomentum.netlify.app"
-      },
-
+        "title": "Jobmentum [ Job Portal ]",
+        "description": "A full‑stack job‑portal platform built with the MERN stack that enables job‑seekers to create an account, browse live job‑postings and apply in real‑time. Recruiters can log in, post jobs, review applications and manage workflows via dynamic dashboards. Authentication is secured via JWT, file uploads for resumes are handled (via Multer), and the app is deployed using Render for backend and Netlify for frontend to ensure scalable delivery. The portal features responsive UI, role‑based access (job‑seeker / recruiter) and seamless flow from posting to application.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166559/Screenshot_2025-03-05_at_2.51.41_PM_uhhicu.png",
+        "tags": ["MERN", "JWT", "Render", "Netlify", "Multer"],
+        "url": "https://jomentum.netlify.app"
+      }
     ],
     "APIs": [
       {
-        title: "LeafDaily",
-        description: "API [Eco points] sustainability tracking platform encouraging eco-friendly habits through gamification.",
-        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        tags: ["Backend", "Node.js", "Express.js"],
-        url: "https://documenter.getpostman.com/view/39189648/2sAYX3sjFp"
+        "title": "LeafDaily",
+        "description": "A backend API designed to encourage eco‑friendly habits through gamified tracking of sustainable actions. Built using Node.js and Express.js, the API exposes endpoints for logging eco‑actions, awarding points, tracking user progress and retrieving sustainability dashboards. It serves as the server‑side backbone of an eco‑lifestyle platform where data can be consumed by front‑end clients or mobile apps.",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb‑1.2.1&auto=format&fit=crop&w=800&q=80",
+        "tags": ["Backend", "Node.js", "Express.js"],
+        "url": "https://documenter.getpostman.com/view/39189648/2sAYX3sjFp"
       },
       {
-        title: "Instagram-Inspired API",
-        description: "REST API for a social media platform with user authentication, posts, likes, and comments.",
-        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        tags: ["Backend", "Node.js", "Express.js", "MongoDB"],
-        url: "https://github.com/Priyasha-Yadav/Instagram-Inspired-API"
+        "title": "Instagram‑Inspired API",
+        "description": "A RESTful server implemented in Node.js/Express.js with MongoDB that supports core social‑media workflows: user registration & authentication, post creation, likes and comments, as well as retrieval of feed data. The API is structured to power a front‑end client mimicking Instagram’s architecture, enabling CRUD operations on posts and real‑time interactive features in a scalable backend design.",
+        "image": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "tags": ["Backend", "Node.js", "Express.js", "MongoDB"],
+        "url": "https://github.com/Priyasha-Yadav/Instagram-Inspired-API"
       },
       {
-        title: "Students API",
-        description: "An API to manage student records, including authentication, CRUD operations, and performance tracking.",
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-        tags: ["Backend", "Node.js", "Express.js", "MongoDB"],
-        url: "https://github.com/Priyasha-Yadav/Students-API"
+        "title": "Students API",
+        "description": "An API service built in Node.js/Express and MongoDB for managing student‑records. It supports CRUD operations on student profiles.",
+        "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "tags": ["Backend", "Node.js", "Express.js", "MongoDB"],
+        "url": "https://github.com/Priyasha-Yadav/Students-API"
+      },
+      {
+        "title": "Companies API",
+        "description": "An API created to store and manage company‑data such as company name, location, salary bands (base/bonus/stock), hiring criteria (minimum CGPA, required skills, experience), interview rounds, employee benefits and head‑count. Built with Next.js API routes and MongoDB, this backend service supports detailed filtering and data retrieval.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2230",
+        "tags": ["NextJS", "MongoDB"],
+        "url": "https://documenter.getpostman.com/view/39189648/2sB3QRmSR1"
       }
     ],
     "Clones": [
-      // {
-      //   title: "Gmail Clone",
-      //   description: "A functional Gmail replica built using React.js and Firebase for authentication and storage.",
-      //   image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      //   tags: ["React.js", "Firebase", "Tailwind CSS", "Redux"],
-      //   url: "https://gmail-clone.com"
-      // },
       {
-        title: "YouTube Clone",
-        description: "A responsive YouTube clone fetching data via YouTube's API with modern UI and video playback.",
-        image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Youtube.png?raw=true",
-        tags: ["React.js", "YouTube API"],
-        url: "https://youtube-vite.netlify.app"
+        "title": "YouTube Clone",
+        "description": "A front‑end clone of YouTube built with React.js and Vite, fetching data via the YouTube Data API to show trending videos, search results and playback functionality. It features side navigation, video lists and video views — enabling users to browse and view video content in a UI closely resembling the original YouTube experience.",
+        "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Youtube.png?raw=true",
+        "tags": ["React.js", "YouTube API"],
+        "url": "https://youtube-vite.netlify.app"
       },
       {
-        title: "Target E-commerce Static Clone",
-        description: "A static front-end clone of Target's e-commerce platform with HTML, CSS, and JavaScript.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166578/Screenshot_2025-03-05_at_11.08.09_AM_iz39v1.png",
-        tags: ["CSS", "HTML", "JavaScript"],
-        url: "https://targetclonecg.netlify.app"
+        "title": "Target E‑commerce Static Clone",
+        "description": "A static front‑end clone of the Target e‑commerce landing page built purely with HTML and CSS. It replicates the visual layout, typography and product grid of the retail site, allowing for practice in design, component structuring and UI layout.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166578/Screenshot_2025-03-05_at_11.08.09_AM_iz39v1.png",
+        "tags": ["CSS", "HTML"],
+        "url": "https://targetclonecg.netlify.app"
+      },
+      {
+        "title": "Static Amazon Landing Page Clone",
+        "description": "A pixel‑perfect static recreation of Amazon’s homepage using modern front‑end techniques, focusing on layout fidelity, responsive behaviour and front‑end performance. This clone emphasises deep understanding of CSS, media‑queries and markup semantics in replicating a complex commercial site’s landing page.",
+        "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/amazon.png?raw=true",
+        "tags": ["CSS", "HTML"],
+        "url": "https://static-amazon.pages.dev"
+      },
+      {
+        "title": "Static Flipkart Landing Page Clone",
+        "description": "A structured static landing page clone of Flipkart built with HTML and CSS, designed to replicate the brand’s layout and category grid. It serves as a focused exercise in front‑end craftsmanship and static UI assembly.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1761052349/flipkart.png",
+        "tags": ["CSS", "HTML"],
+        "url": "https://sstatic-flipkart.pages.dev"
       }
     ],
     "Mini Projects": [
       {
-        title: "Tic Tac Toe",
-        description: "A simple yet interactive Tic Tac Toe game built using HTML CSS JavaScript.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_2.48.51_PM_sxnozm.png",
-        tags: ["HTML", "CSS", "JavaScript"],
-        url: "https://tic-tac-toe-py.netlify.app"
+        "title": "Tic Tac Toe",
+        "description": "An interactive browser‑based Tic Tac Toe game built with HTML, CSS and JavaScript. Users can click to place X or O, the game detects wins/draws, and the UI resets seamlessly for new rounds. A clean example of fundamental DOM‑manipulation and event‑handling in front‑end development.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_2.48.51_PM_sxnozm.png",
+        "tags": ["HTML", "CSS", "JavaScript"],
+        "url": "https://tic-tac-toe-py.netlify.app"
       },
       {
-        title: "Ludo Static Page",
-        description: "A visually appealing static page replicating the Ludo board design using HTML & CSS.",
-        image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/ludo.png?raw=true",
-        tags: ["HTML", "CSS"],
-        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
+        "title": "Static Sudoku",
+        "description": "A visually styled static representation of a Sudoku board created purely with HTML and CSS. While not offering interactivity or game logic, this project focuses on mastering grid layouts, typography and board‑structure design for UI practice.",
+        "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Sudoku/Sudoku.png?raw=true",
+        "tags": ["HTML", "CSS"],
+        "url": "https://static-sudoku.pages.dev"
       },
       {
-        title: "Static Sudoku",
-        description: "A visually appealing static page replicating the Sudoku board design using HTML & CSS.",
-        image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Sudoku.png?raw=true",
-        tags: ["JavaScript", "HTML", "CSS"],
-        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
-      },
-      // {
-      //   title: "Amazon Landing Page Clone",
-      //   description: "A pixel-perfect clone of Amazon's homepage built using modern front-end technologies.",
-      //   image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/amazon.png?raw=true",
-      //   tags: ["CSS", "HTML", "JavaScript"],
-      //   url: "https://github.com/Priyasha-Yadav/HTML"
-      // },
-      {
-        title: "Static Chess",
-        description: "A static chess board design with HTML and CSS [using flex], showcasing various chess pieces.",
-        image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Chess.png?raw=true",
-        tags: ["HTML", "CSS"],
-        url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
-      },
-      // {
-      //   title: "Static Kidz World Website",
-      //   description: "A static website for kids with colorful design elements and interactive animations.",
-      //   image: "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/kidz_world_1.png?raw=true",
-      //   tags: ["HTML", "CSS"],
-      //   url: "https://github.com/Priyasha-Yadav/Task/tree/main/Frontend_Task"
-      // },
-      {
-        title: "Calculator-2.0",
-        description: "A sleek, calculator made using HTML, CSS, and JavaScript with basic arithmetic operations.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1756798060/Screenshot_2025-09-02_at_12.57.31_PM_h687hk.png",
-        tags: ["HTML", "CSS", "JavaScript"],
-        url: "https://calc-two.netlify.app"
+        "title": "Static Chess",
+        "description": "A static chess board layout built using HTML and CSS (leveraging flexbox and grid) with chess pieces positioned for visual authenticity. This project emphasises component positioning, board styling and layout mastery.",
+        "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Chess/Chess.png?raw=true",
+        "tags": ["HTML", "CSS"],
+        "url": "https://static-chess.pages.dev"
       },
       {
-        title: "Calculator-1.0",
-        description: "A simple calculator made using HTML, CSS, and JavaScript with basic arithmetic operations.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1756797843/Screenshot_2025-09-02_at_12.47.31_PM_j8ok24.png",
-        tags: ["HTML", "CSS", "JavaScript"],
-        url: "https://calc1-one.netlify.app"
+        "title": "Static Super Heroes",
+        "description": "A static scoreboard or styled page of superheroes crafted with HTML and CSS for visual practice. This project underscores use of imagery, layout patterns and typography to build a themed UI rather than dynamic behaviour.",
+        "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/SuperHeroes/Superheroes_ss.png?raw=true",
+        "tags": ["HTML", "CSS"],
+        "url": "https://static-super-heroes.pages.dev"
+      },
+      {
+        "title": "Static Card",
+        "description": "A simple static card component built with HTML and CSS designed for practice in structuring markup, applying CSS styles, managing spacing, and achieving component‑like styling in a standalone context.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1761052160/card.png",
+        "tags": ["HTML", "CSS"],
+        "url": "https://static-card.pages.dev"
+      },
+      {
+        "title": "Static Cricket Scoreboard",
+        "description": "A styled static cricket‑scoreboard page created using HTML and CSS that visually mimics live match scoreboards. Although non‑interactive, it provides hands‑on practice in layout structuring, typography and thematic design of sports UI components.",
+        "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Cricket/Screenshot_Cricket.png?raw=true",
+        "tags": ["HTML", "CSS"],
+        "url": "https://static-cricket.pages.dev"
+      },
+      {
+        "title": "Calculator‑2.0",
+        "description": "An sleek web calculator built using HTML, CSS and JavaScript featuring polished UI, styling improvements. Users can input numbers and operators, see updated results and reset design, offering clear practice in interactive front‑end behaviour.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1756798060/Screenshot_2025-09-02_at_12.57.31_PM_h687hk.png",
+        "tags": ["HTML", "CSS", "JavaScript"],
+        "url": "https://calc-two.netlify.app"
+      },
+      {
+        "title": "Calculator‑1.0",
+        "description": "A basic web calculator implemented with HTML, CSS and JavaScript supporting fundamental arithmetic operations, built for practice in DOM‑selection, event‑handling and result‑rendering. A clear starter project for front‑end learners to master logic flow and UI design.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1756797843/Screenshot_2025-09-02_at_12.47.31_PM_j8ok24.png",
+        "tags": ["HTML", "CSS", "JavaScript"],
+        "url": "https://calc1-one.netlify.app"
       }
     ],
     "Figma Projects": [
       {
-        title: "LeafDaily UI/UX Design",
-        description: "A sleek, modern Figma design for an eco-friendly lifestyle tracking app with gamification elements.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166572/Screenshot_2025-03-05_at_2.47.56_PM_nubwh9.png",
-        tags: ["UI/UX", "Figma", "Dark Mode"],
-        url: "https://www.figma.com/design/rUVgdmJUXLelwqm0oFhEy0/LeafDaily?node-id=0-1&t=tjMwO0Xf8mHdvj7b-1"
+        "title": "LeafDaily UI/UX Design",
+        "description": "A modern UI/UX prototype created in Figma for an eco‐lifestyle tracking app, emphasising gamification flows and dashboard summaries for sustainable actions. The design integrates clean typography, layered card layouts, and intuitive navigation focused on eco‑habit tracking and user engagement.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166572/Screenshot_2025-03-05_at_2.47.56_PM_nubwh9.png",
+        "tags": ["UI/UX", "Figma", "Dark Mode"],
+        "url": "https://www.figma.com/design/rUVgdmJUXLelwqm0oFhEy0/LeafDaily?node-id=0-1&t=tjMwO0Xf8mHdvj7b‑1"
       },
       {
-        title: "Lapto",
-        description: "An intuitive website to display information about laptops.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167805/Screenshot_2025-03-05_at_3.11.24_PM_tdyxpo.png",
-        tags: ["UI/UX", "Figma", "Web Design"],
-        url: "https://www.figma.com/design/gIyQO0jTCwEuxiBdfwyykh/Lapto---Your-Laptop-Companion?node-id=0-1&t=7mM7DDZSITcquwaB-1"
+        "title": "Lapto",
+        "description": "A clean and intuitive website design in Figma for laptop products. It showcases product‑listing layouts, responsive grids, interactive prototype states and immersive UI details that help users navigate product comparisons easily. The design emphasises clarity, manageable card‑based UI and sleek styling for an e‑commerce companion experience.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167805/Screenshot_2025-03-05_at_3.11.24_PM_tdyxpo.png",
+        "tags": ["UI/UX", "Figma", "Web Design"],
+        "url": "https://www.figma.com/design/gIyQO0jTCwEuxiBdfwyykh/Lapto---Your‑Laptop‑Companion?node-id=0‑1&t=7mM7DDZSITcquwaB‑1"
       },
       {
-        title: "Jobmentum - Job Portal UI",
-        description: "A clean and user-friendly job portal UI/UX design with an easy-to-navigate layout.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_11.06.07_AM_ku7gql.png",
-        tags: ["UI/UX", "Figma", "Web Design"],
-        url: "https://www.figma.com/design/rCJvmrMjiTtu9J3uqajM6z/Jobmentum?node-id=0-1&t=u6ocRs6heDdGLKEl-1"
+        "title": "Jobmentum ‑ Job Portal UI",
+        "description": "A user‑friendly job‑portal UI/UX design built in Figma for the Jobmentum project, presenting a streamlined navigation experience for both job‑seekers and recruiters. It features dashboard views, search filters and clean interaction flows to facilitate job posting and application management.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_11.06.07_AM_ku7gql.png",
+        "tags": ["UI/UX", "Figma", "Web Design"],
+        "url": "https://www.figma.com/design/rCJvmrMjiTtu9J3uqajM6z/Jobmentum?node-id=0‑1&t=u6ocRs6heDdGLKEl‑1"
       },
       {
-        title: "Instagram UI Clone",
-        description: "A Figma design for Instagram's mobile app.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167375/Screenshot_2025-03-05_at_3.04.38_PM_quoxff.png",
-        tags: ["UI/UX", "Figma", "Social Media"],
-        url: "https://www.figma.com/design/Mak3m2fnwHIzyFoelNSdJU/Instagram-UI-Clone?node-id=0-1&t=kclY5P6yIfyweCVk-1"
+        "title": "Instagram UI Clone",
+        "description": "A mobile‑app UI prototype in Figma that mirrors the layout and interaction design of Instagram. It features feed views, story thumbnails and mobile design. The project focuses on visual fidelity.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167375/Screenshot_2025-03-05_at_3.04.38_PM_quoxff.png",
+        "tags": ["UI/UX", "Figma", "Social Media"],
+        "url": "https://www.figma.com/design/Mak3m2fnwHIzyFoelNSdJU/Instagram‑UI‑Clone?node-id=0‑1&t=kclY5P6yIfyweCVk‑1"
       },
       {
-        title: "Netflix UI Clone",
-        description: "A dark-themed Netflix homepage clone with hover effects.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167228/Screenshot_2025-03-05_at_3.02.47_PM_mqtdrf.png",
-        tags: ["UI/UX", "Figma"],
-        url: "https://www.figma.com/design/A5WYSeMi3ffMYJcyzJOq7K/Netflix-UI-Clone?node-id=0-1&t=ldV1rn48DKlNoGZs-1"
+        "title": "Netflix UI Clone",
+        "description": "A dark‑theme homepage UI clone of Netflix created in Figma emphasising rich media banners, hover interactions and cinematic typography. The design replicates a streaming‑platform aesthetic with immersive visuals, card overlays and a fluid browsing experience within a static prototype context.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167228/Screenshot_2025-03-05_at_3.02.47_PM_mqtdrf.png",
+        "tags": ["UI/UX", "Figma"],
+        "url": "https://www.figma.com/design/A5WYSeMi3ffMYJcyzJOq7K/Netflix‑UI‑Clone?node-id=0‑1&t=ldV1rn48DKlNoGZs‑1"
       },
       {
-        title: "Marvel Booking",
-        description: "This is a high-fidelity, interactive prototype designed in Figma for a Marvel-themed movie booking mobile application.",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1754385208/Screenshot_2025-08-05_at_2.43.18_PM_arg6sb.png",
-        tags: ["UI/UX", "Figma"],
-        url: "https://www.figma.com/design/CfdnRVPt1pdfkpmWtnh9dv/Marvel-Booking?node-id=189-956&t=loSTGkc4JmIMUcBh-1"
-      },
-
+        "title": "Marvel Booking",
+        "description": "A high‑fidelity interactive mobile‑prototype in Figma for a Marvel‑themed movie‑booking application, featuring seat‑selection flows, theming consistent with the branding, and smooth transitions between booking steps. The design emphasizes user engagement, themed visuals and coherent UI across mobile screens.",
+        "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1754385208/Screenshot_2025-08-05_at_2.43.18_PM_arg6sb.png",
+        "tags": ["UI/UX", "Figma"],
+        "url": "https://www.figma.com/design/CfdnRVPt1pdfkpmWtnh9dv/Marvel‑Booking?node‑id=189‑956&t=loSTGkc4JmIMUcBh‑1"
+      }
     ]
-  };
+  }
+
 
   // Get all categories including "All"
   const categories = ["All", ...Object.keys(categorizedProjects)];
