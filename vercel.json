@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Prerender-Token", "value": "Jz8u90jqGftuQpjh2ING" }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://service.prerender.io/https://priyasha-yadav.vercel.app/$1"
+    }
+  ]
+}
