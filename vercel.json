@@ -3,14 +3,20 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Prerender-Token", "value": "Jz8u90jqGftuQpjh2ING" }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "X-Prerender-Token", "value": "" }
       ]
     }
   ],
   "rewrites": [
     {
       "source": "/(.*)",
+      "has": [
+        { "type": "header", "key": "user-agent", "value": "(?i)googlebot|bingbot|yahoo" }
+      ],
       "destination": "https://service.prerender.io/https://priyasha-yadav.vercel.app/$1"
     }
   ]
 }
+
+
