@@ -13,9 +13,9 @@ const socialLinks = {
 };
 
 const colorOptions = [
+    { name: 'Black', value: 'black', textColor: 'text-white' },
     { name: 'Blue', value: 'blue', textColor: 'text-white' },
     { name: 'Green', value: 'green', textColor: 'text-white' },
-    { name: 'Black', value: 'black', textColor: 'text-white' },
     { name: 'Violet', value: 'violet', textColor: 'text-white' },
     { name: 'Pink', value: 'pink', textColor: 'text-white' },
     { name: 'Red', value: 'red', textColor: 'text-white' },
