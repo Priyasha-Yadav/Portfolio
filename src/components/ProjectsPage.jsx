@@ -63,14 +63,14 @@ const ProjectsPage = () => {
         "description": "A pixel‑perfect static recreation of Amazon’s homepage using modern front‑end techniques, focusing on layout fidelity, responsive behaviour and front‑end performance. This clone emphasises deep understanding of CSS, media‑queries and markup semantics in replicating a complex commercial site’s landing page.",
         "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/amazon.png?raw=true",
         "tags": ["CSS", "HTML"],
-        "url": "https://static-amazon.pages.dev"
+        "url": "https://static-amazon.netlify.app"
       },
       {
         "title": "Static Flipkart Landing Page Clone",
         "description": "A structured static landing page clone of Flipkart built with HTML and CSS, designed to replicate the brand’s layout and category grid. It serves as a focused exercise in front‑end craftsmanship and static UI assembly.",
         "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1761052349/flipkart.png",
         "tags": ["CSS", "HTML"],
-        "url": "https://sstatic-flipkart.pages.dev"
+        "url": "https://static-flip-dev.netlify.app"
       }
     ],
     "Mini Projects": [
@@ -86,35 +86,35 @@ const ProjectsPage = () => {
         "description": "A visually styled static representation of a Sudoku board created purely with HTML and CSS. While not offering interactivity or game logic, this project focuses on mastering grid layouts, typography and board‑structure design for UI practice.",
         "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Sudoku/Sudoku.png?raw=true",
         "tags": ["HTML", "CSS"],
-        "url": "https://static-sudoku.pages.dev"
+        "url": "https://static-sudoku.netlify.app"
       },
       {
         "title": "Static Chess",
         "description": "A static chess board layout built using HTML and CSS (leveraging flexbox and grid) with chess pieces positioned for visual authenticity. This project emphasises component positioning, board styling and layout mastery.",
         "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Chess/Chess.png?raw=true",
         "tags": ["HTML", "CSS"],
-        "url": "https://static-chess.pages.dev"
+        "url": "https://static-chess-dev.netlify.app"
       },
       {
         "title": "Static Super Heroes",
         "description": "A static scoreboard or styled page of superheroes crafted with HTML and CSS for visual practice. This project underscores use of imagery, layout patterns and typography to build a themed UI rather than dynamic behaviour.",
         "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/SuperHeroes/Superheroes_ss.png?raw=true",
         "tags": ["HTML", "CSS"],
-        "url": "https://static-super-heroes.pages.dev"
+        "url": "https://static-super-heroes.netlify.app"
       },
       {
         "title": "Static Card",
         "description": "A simple static card component built with HTML and CSS designed for practice in structuring markup, applying CSS styles, managing spacing, and achieving component‑like styling in a standalone context.",
         "image": "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1761052160/card.png",
         "tags": ["HTML", "CSS"],
-        "url": "https://static-card.pages.dev"
+        "url": "https://static-card-dev.netlify.app"
       },
       {
         "title": "Static Cricket Scoreboard",
         "description": "A styled static cricket‑scoreboard page created using HTML and CSS that visually mimics live match scoreboards. Although non‑interactive, it provides hands‑on practice in layout structuring, typography and thematic design of sports UI components.",
         "image": "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Cricket/Screenshot_Cricket.png?raw=true",
         "tags": ["HTML", "CSS"],
-        "url": "https://static-cricket.pages.dev"
+        "url": "https://static-cricket.netlify.app"
       },
       {
         "title": "Calculator‑2.0",
