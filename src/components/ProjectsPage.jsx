@@ -74,15 +74,16 @@ const categorizedProjects = {
       tags: ["HTML", "CSS"],
       url: "https://targetclonecg.netlify.app",
     },
-    {
-      title: "Amazon Landing Page Clone",
-      description:
-        "A pixel-accurate static recreation of Amazon’s homepage using modern HTML and CSS techniques.",
-      image:
-        "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/amazon.png?raw=true",
-      tags: ["HTML", "CSS"],
-      url: "https://static-amazon.netlify.app",
-    },
+    // {
+    //   title: "Amazon Landing Page Clone",
+    //   description:
+    //     "A pixel-accurate static recreation of Amazon’s homepage using modern HTML and CSS techniques.",
+    //   image:
+    //     "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/amazon.png?raw=true",
+    //   tags: ["HTML", "CSS"],
+    //   url: "https://static-amazon.netlify.app",
+    // },
+    
     {
       title: "Flipkart Landing Page Clone",
       description:
@@ -234,7 +235,7 @@ const categorizedProjects = {
 
         {/* Projects grid with animations */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <a
               key={index}

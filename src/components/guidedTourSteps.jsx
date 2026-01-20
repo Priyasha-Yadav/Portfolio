@@ -26,6 +26,15 @@ export const guidedTourSteps = [
     voiceScript:
       "Here’s a quick overview of my current toolkit and skills, so you can instantly see where I deliver the most value."
   },
+    {
+    id: 'explanation-section',
+    selector: '#communication',
+    title: 'Explanation & Communication',
+    description:
+      "This section highlights how I explain projects, concepts, and problem-solving approaches—including LeetCode questions—through recorded content, showcasing clarity and structured thinking.",
+    voiceScript:
+      "Here you can see how I break down ideas, projects, and coding problems like LeetCode questions, demonstrating my communication and problem-solving skills."
+  },
   {
     id: 'side-nav',
     selector: '[data-tour-target="side-navigation"]',
@@ -52,7 +61,10 @@ export const guidedTourSteps = [
       "Ready to collaborate? Drop me a message through this contact form and let's build something memorable together.",
     voiceScript:
       "If you’re ready to collaborate or just want to say hi, the contact form is the easiest way to reach me."
-  },
+  }
+
+
+
   // {
   //   id: 'settings-panel',
   //   selector: ({ hasSeenSettings }) => {
@@ -81,4 +93,4 @@ export const guidedTourSteps = [
   //   voiceScript:
   //     "Customize the mood with background themes and uncover mini surprises tucked inside this settings panel."
   // },
-  ];
+];

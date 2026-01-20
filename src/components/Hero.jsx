@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-
 import { useGuidedTour } from './GuidedTourProvider.jsx';
 
 const Hero = () => {
@@ -10,70 +9,69 @@ const Hero = () => {
       {/* Text Section */}
       <motion.div
         className="space-y-6"
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       >
         <h2 className="text-6xl font-bold leading-tight">
           <span className="text-red-500">Code, but</span>
           <br />
           make it vibe.
         </h2>
+
         <p className="text-gray-300 max-w-md">
-          Turning "it'll never work" into "wait, that was too easy."
-          Spoiler: I'm still debugging—probably forever.
+          Turning "it&apos;ll never work" into "wait, that was too easy."
+          Spoiler: I&apos;m still debugging—probably forever.
           But hey, at least it compiles… most of the time.
         </p>
+
         <div className="flex items-center gap-4 pt-4">
-          {/* Button to start the guided tour */}
           <motion.button
-            className="px-6 py-3 bg-transparent border border-gray-700 text-white rounded-full hover:bg-gray-800/30 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             onClick={startTour}
             data-tour-launcher="true"
+            className="px-6 py-3 border border-gray-700 rounded-full hover:bg-gray-800/30 transition-colors"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
           >
             Take the Tour
           </motion.button>
 
-          {/* Button to scroll to Projects */}
           <motion.button
-            className="px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 text-white rounded-full hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             data-scroll-target="projects"
+            className="px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 rounded-full hover:shadow-lg hover:shadow-red-500/20 transition-shadow"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
           >
             View Projects
           </motion.button>
 
-          {/* Button to scroll to About */}
           <motion.button
-            className="px-6 py-3 bg-transparent border border-gray-700 text-white rounded-full hover:bg-gray-800/30 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             data-scroll-target="about"
+            className="px-6 py-3 border border-gray-700 rounded-full hover:bg-gray-800/30 transition-colors"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
           >
             About Me
           </motion.button>
         </div>
       </motion.div>
 
-      {/* Decorative Elements */}
+      {/* Decorative Section */}
       <motion.div
         className="relative"
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/40 to-purple-500/40 rounded-full filter blur-xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-500/40 to-purple-500/40 rounded-full blur-xl" />
+
+        {/* CSS-only bars */}
         <div className="grid grid-cols-4 gap-4 opacity-90">
           {Array.from({ length: 16 }).map((_, i) => (
-            <motion.div
+            <div
               key={i}
-              className="w-full h-1 bg-white/20 rounded-full transform rotate-45"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 * i }}
+              className="hero-bar"
+              style={{ animationDelay: `${i * 80}ms` }}
               role="presentation"
             />
           ))}

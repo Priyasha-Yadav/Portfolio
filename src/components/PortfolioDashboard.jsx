@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import SkillsSection from './SkillsSection.jsx';
-import ProjectsPage from './ProjectsPage';
-import SideNavigation from './SideNavigation';
-import AboutMe from './AboutMe';
-import ContactForm from './ContactForm';
+
 import Hero from './Hero';
-import CertificatesSection from './CertificatesSection.jsx';
-import KonamiEasterEgg from './KonamiEasterEgg.jsx';
+import SideNavigation from './SideNavigation';
+import Footer from './Footer.jsx';
 import { GuidedTourProvider } from './GuidedTourProvider.jsx';
 import GuidedTourOverlay from './GuidedTourOverlay.jsx';
-import Footer from './Footer.jsx';
+
+const ProjectsPage = lazy(() => import('./ProjectsPage'));
+const SkillsSection = lazy(() => import('./SkillsSection'));
+const YouTubeSection = lazy(() => import('./YouTubeSection'));
+const CertificatesSection = lazy(() => import('./CertificatesSection'));
+const AboutMe = lazy(() => import('./AboutMe'));
+const ContactForm = lazy(() => import('./ContactForm'));
+const KonamiEasterEgg = lazy(() => import('./KonamiEasterEgg'));
 
 const PortfolioDashboard = () => {
   const phoneNumber = '918733012811';
@@ -18,149 +21,69 @@ const PortfolioDashboard = () => {
   const [bgColor, setBgColor] = useState(localStorage.getItem('preferredBgColor') || 'black');
   const [isScrollTopVisible, setIsScrollTopVisible] = useState(false);
 
-  useEffect(() => {
-    const handleStorageChange = () => {
-      const updatedColor = localStorage.getItem('preferredBgColor') || 'black';
-      setBgColor(updatedColor);
-    };
+  const particlePositions = useMemo(
+    () =>
+      Array.from({ length: 20 }, () => ({
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+      })),
+    []
+  );
 
-    const handlePreferredColorMessage = (event) => {
-      if (event.data?.type === 'preferredBgColor:update' && event.data?.value) {
-        setBgColor(event.data.value);
+  useEffect(() => {
+
+    const savedColor = localStorage.getItem('preferredBgColor') || 'black';
+    setBgColor(savedColor);
+
+
+    const handleThemeUpdate = (event) => {
+      if (event.detail?.value) {
+        setBgColor(event.detail.value);
       }
     };
 
-    window.addEventListener('storage', handleStorageChange);
-    window.addEventListener('message', handlePreferredColorMessage);
-
-    const intervalId = setInterval(() => {
-      const currentColor = localStorage.getItem('preferredBgColor');
-      if (currentColor && currentColor !== bgColor) {
-        setBgColor(currentColor);
-      }
-    }, 1000);
+    window.addEventListener('preferredBgColor:update', handleThemeUpdate);
 
     return () => {
-      window.removeEventListener('storage', handleStorageChange);
-      window.removeEventListener('message', handlePreferredColorMessage);
-      clearInterval(intervalId);
-    };
-  }, [bgColor]);
-
-  useEffect(() => {
-    const handleAnchorClick = (event) => {
-      const target = event.target.closest('a[href^="#"], button[data-scroll-target]');
-      if (!target) return;
-
-      const targetId = target.getAttribute('href')?.slice(1) || target.dataset.scrollTarget;
-      if (!targetId) return;
-
-      const targetElement = document.getElementById(targetId);
-      if (!targetElement) return;
-
-      event.preventDefault();
-
-      // Smooth scroll with easing
-      const startPosition = window.pageYOffset;
-      const targetPosition = targetElement.offsetTop - 80; // Offset for header
-      const distance = targetPosition - startPosition;
-      const duration = 800; // milliseconds
-      let startTime = null;
-
-      const easeInOutCubic = (t) => {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-      };
-
-      const animation = (currentTime) => {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-
-        window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
-
-        if (progress < 1) {
-          requestAnimationFrame(animation);
-        }
-      };
-
-      requestAnimationFrame(animation);
-    };
-
-    const handleScroll = () => {
-      const shouldShow = window.scrollY > window.innerHeight * 0.6;
-      setIsScrollTopVisible((previous) => (previous === shouldShow ? previous : shouldShow));
-    };
-
-    document.addEventListener('click', handleAnchorClick);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    handleScroll();
-
-    return () => {
-      document.removeEventListener('click', handleAnchorClick);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('preferredBgColor:update', handleThemeUpdate);
     };
   }, []);
 
-  const getGradientClass = () => {
+
+  const gradientClass = useMemo(() => {
     switch (bgColor) {
-      case 'blue':
-        return 'from-black/30 to-blue-500/50';
-      case 'green':
-        return 'from-black/30 to-green-500/50';
-      case 'black':
-        return 'from-black/30 to-black-500/50';
-      case 'violet':
-        return 'from-black/30 to-violet-500/50';
-      case 'pink':
-        return 'from-black/30 to-pink-500/50';
-      case 'red':
-        return 'from-black/30 to-red-500/50';
-      case 'orange':
-        return 'from-black/30 to-orange-500/50';
-      default:
-        return 'from-black/30 to-pink-500/50';
+      case 'blue': return 'from-black/30 to-blue-500/50';
+      case 'green': return 'from-black/30 to-green-500/50';
+      case 'black': return 'from-black/30 to-black-500/50';
+      case 'violet': return 'from-black/30 to-violet-500/50';
+      case 'pink': return 'from-black/30 to-pink-500/50';
+      case 'red': return 'from-black/30 to-red-500/50';
+      case 'orange': return 'from-black/30 to-orange-500/50';
+      default: return 'from-black/30 to-pink-500/50';
     }
-  };
+  }, [bgColor]);
+
 
   return (
     <GuidedTourProvider>
+      <GuidedTourOverlay />
+
       <div className="min-h-screen bg-black text-white relative">
-        <GuidedTourOverlay />
-        <SideNavigation isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+        <SideNavigation
+          isExpanded={isExpanded}
+          setIsExpanded={setIsExpanded}
+        />
+
         <div className={`main-content ${isExpanded ? 'expanded' : ''}`}>
           <div className="container mx-auto px-6 py-12" id="home">
             {isScrollTopVisible && (
               <motion.button
                 type="button"
-                onClick={() => {
-                  const startPosition = window.pageYOffset;
-                  const targetPosition = 0;
-                  const distance = targetPosition - startPosition;
-                  const duration = 800;
-                  let startTime = null;
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 
-                  const easeInOutCubic = (t) => {
-                    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-                  };
-
-                  const animation = (currentTime) => {
-                    if (startTime === null) startTime = currentTime;
-                    const timeElapsed = currentTime - startTime;
-                    const progress = Math.min(timeElapsed / duration, 1);
-
-                    window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
-
-                    if (progress < 1) {
-                      requestAnimationFrame(animation);
-                    }
-                  };
-
-                  requestAnimationFrame(animation);
-                }}
-                className="fixed bottom-8 right-4 z-40 h-12 w-12 rounded-full bg-gradient-to-r from-red-500 to-purple-600 shadow-lg shadow-red-500/40 hover:shadow-purple-500/40 transition-all duration-300 hover:-translate-y-1"
+                className="fixed bottom-3 right-5 z-40 h-10 w-10 rounded-full bg-gradient-to-r from-red-500 to-purple-600 shadow-lg shadow-red-500/40 hover:shadow-purple-500/40 transition-all duration-300 hover:-translate-y-1"
                 aria-label="Scroll back to top"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.95 }}
               >
                 ↑
@@ -173,7 +96,11 @@ const PortfolioDashboard = () => {
               </h1>
               <nav className="hidden md:flex gap-8" role="navigation" aria-label="Main navigation">
                 <button
-                  data-scroll-target="contact-form"
+                  onClick={() =>
+                    document
+                      .getElementById("contact-form")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="px-6 py-2 bg-[#08081A] text-white rounded-full hover:bg-[#111122] hover:opacity-90 transition-colors z-10 my-4 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black"
                   aria-label="Scroll to contact form"
                 >
@@ -187,23 +114,27 @@ const PortfolioDashboard = () => {
             </section>
 
             <section id="projects" className="mb-32" aria-labelledby="projects-heading">
-              <ProjectsPage />
+              <Suspense fallback={null}>
+                <ProjectsPage />
+              </Suspense>
             </section>
 
-            <section id="skills" aria-labelledby="skills-heading">
-              <SkillsSection />
+            <section id="skills" className="mb-32" aria-labelledby="skills-heading">
+              <Suspense fallback={null}>
+                <SkillsSection />
+              </Suspense>
             </section>
 
             <div className="fixed inset-0 pointer-events-none">
-              <div className={`absolute inset-0 bg-gradient-to-r ${getGradientClass()} opacity-85`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-r ${gradientClass} opacity-85`}></div>
               <div className="relative w-full h-full">
-                {Array.from({ length: 20 }).map((_, index) => (
+                {particlePositions.map((pos, index) => (
                   <span
                     key={index}
                     className="absolute w-2 h-2 bg-white/20 rounded-full animate-ping"
                     style={{
-                      top: `${Math.random() * 100}%`,
-                      left: `${Math.random() * 100}%`,
+                      top: pos.top,
+                      left: pos.left,
                       transform: 'translate(-50%, -50%)',
                     }}
                   />
@@ -211,19 +142,30 @@ const PortfolioDashboard = () => {
               </div>
             </div>
           </div>
-
+          <section id="communication" className="mb-32 px-4" aria-labelledby="communication-heading">
+            <Suspense fallback={null}>
+              <YouTubeSection />
+            </Suspense>
+          </section>
           <section id="certificates-section" className="mb-32 px-4" aria-labelledby="certificates-heading">
-            <CertificatesSection />
+            <Suspense fallback={null}>
+              <CertificatesSection />
+            </Suspense>
           </section>
 
           <section id="about" aria-labelledby="about-heading">
-            <AboutMe />
+            <Suspense fallback={null}>
+              <AboutMe />
+            </Suspense>
           </section>
+          <Suspense fallback={null}>
+            <KonamiEasterEgg />
+          </Suspense>
 
-          <KonamiEasterEgg />
-
-          <section id="contact" className="py-16 px-4" aria-labelledby="contact-heading">
-            <ContactForm />
+          <section id="contact-form" className="py-16 px-4" aria-labelledby="contact-heading">
+            <Suspense fallback={null}>
+              <ContactForm />
+            </Suspense>
           </section>
 
           <Footer />
@@ -246,8 +188,10 @@ const PortfolioDashboard = () => {
             </svg>
           </a>
         </div>
+
       </div>
     </GuidedTourProvider>
+
   );
 };
 

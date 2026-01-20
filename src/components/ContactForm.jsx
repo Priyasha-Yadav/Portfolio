@@ -1,15 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import {
-    Mail,
-    MapPin,
-    Github,
-    Linkedin,
-    Twitter,
-    Send,
-    Loader2,
-} from "lucide-react";
 
 const ContactForm = () => {
     const form = useRef(null);
@@ -31,7 +22,7 @@ const ContactForm = () => {
     ===================== */
     useEffect(() => {
         const onScroll = () => {
-            const section = document.getElementById("contact");
+            const section = document.getElementById("contact-form");
             if (
                 section &&
                 window.scrollY + window.innerHeight >= section.offsetTop + 100
@@ -91,13 +82,12 @@ const ContactForm = () => {
         setIsSubmitting(true);
         setSubmitStatus(null);
 
-        emailjs
-            .sendForm(
-                "service_32b5lsh",
-                "template_9mdsi1q",
-                form.current,
-                "jD0YSS1N5xYf-ycvy"
-            )
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            form.current,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
             .then(() => {
                 setSubmitStatus({
                     success: true,
@@ -113,7 +103,7 @@ const ContactForm = () => {
                 });
             })
             .finally(() => setIsSubmitting(false));
-            
+
     };
 
     return (
@@ -285,7 +275,6 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
 
 
 

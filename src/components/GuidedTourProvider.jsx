@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from 'react';
 import { guidedTourSteps } from './guidedTourSteps.jsx';
 
 const GuidedTourContext = createContext(null);
@@ -10,18 +18,15 @@ export const GuidedTourProvider = ({ children }) => {
   const [hasCompletedTour, setHasCompletedTour] = useState(false);
   const hasSeenSettingsRef = useRef(false);
 
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const stored = window.localStorage.getItem('guidedTour:completed');
     setHasCompletedTour(stored === 'true');
   }, []);
 
-  useEffect(() => {
-    if (!isActive) return;
-    hasSeenSettingsRef.current = false;
-  }, [isActive]);
-
   const startTour = useCallback(() => {
+    hasSeenSettingsRef.current = false;
     setCurrentStepIndex(0);
     setIsActive(true);
   }, []);
@@ -30,10 +35,12 @@ export const GuidedTourProvider = ({ children }) => {
     setIsActive(false);
     setVoiceEnabled(false);
     setCurrentStepIndex(0);
+
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('guidedTour:completed', 'true');
     }
     setHasCompletedTour(true);
+
     if (typeof window !== 'undefined' && window.speechSynthesis) {
       window.speechSynthesis.cancel();
     }
@@ -44,27 +51,24 @@ export const GuidedTourProvider = ({ children }) => {
   }, [stopTour]);
 
   const nextStep = useCallback(() => {
-    setCurrentStepIndex((previous) => {
-      if (previous + 1 < guidedTourSteps.length) {
-        return previous + 1;
-      }
+    setCurrentStepIndex((prev) => {
+      if (prev + 1 < guidedTourSteps.length) return prev + 1;
       stopTour();
-      return previous;
+      return prev;
     });
   }, [stopTour]);
 
   const previousStep = useCallback(() => {
-    setCurrentStepIndex((previous) => (previous > 0 ? previous - 1 : previous));
+    setCurrentStepIndex((prev) => (prev > 0 ? prev - 1 : prev));
   }, []);
 
   const toggleVoice = useCallback(() => {
-    setVoiceEnabled((previous) => !previous);
+    setVoiceEnabled((prev) => !prev);
   }, []);
 
   const resolveStepTarget = useCallback(
     (step = guidedTourSteps[currentStepIndex]) => {
-      if (typeof window === 'undefined') return null;
-      if (!step) return null;
+      if (typeof window === 'undefined' || !step) return null;
 
       if (typeof step.selector === 'function') {
         return step.selector({ hasSeenSettings: hasSeenSettingsRef.current });
@@ -75,8 +79,10 @@ export const GuidedTourProvider = ({ children }) => {
     [currentStepIndex]
   );
 
+
   useEffect(() => {
     if (!isActive) return;
+
     const step = guidedTourSteps[currentStepIndex];
     if (!step) {
       stopTour();
@@ -85,48 +91,39 @@ export const GuidedTourProvider = ({ children }) => {
 
     const targetElement = resolveStepTarget(step);
     if (!targetElement) {
-      const fallback = document.querySelector('[data-tour-target="side-navigation"]');
-      if (fallback) {
-        return;
-      }
       stopTour();
       return;
     }
 
-    if (targetElement?.dataset?.tourTarget === 'settings-panel') {
+    if (targetElement.dataset?.tourTarget === 'settings-panel') {
       hasSeenSettingsRef.current = true;
     }
 
-    const scrollIntoViewTimeout = window.setTimeout(() => {
+    const timeout = window.setTimeout(() => {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 120);
 
-    return () => {
-      window.clearTimeout(scrollIntoViewTimeout);
-    };
-  }, [currentStepIndex, hasSeenSettingsRef, isActive, resolveStepTarget, stopTour]);
+    return () => window.clearTimeout(timeout);
+  }, [isActive, currentStepIndex, resolveStepTarget, stopTour]);
+
 
   useEffect(() => {
     if (!isActive) return;
+
     const step = guidedTourSteps[currentStepIndex];
     const target = resolveStepTarget(step);
-    const handle = () => {
-      if (!target) return;
-      const event = new CustomEvent('guided-tour:step-target', {
+    if (!target) return;
+
+    window.dispatchEvent(
+      new CustomEvent('guided-tour:step-target', {
         detail: { id: step?.id ?? null, element: target }
-      });
+      })
+    );
 
-      if (typeof window !== 'undefined') {
-        window.dispatchEvent(event);
-      }
-    };
-
-    handle();
     return () => {
-      if (typeof window === 'undefined') return;
       window.dispatchEvent(new CustomEvent('guided-tour:step-target-clear'));
     };
-  }, [currentStepIndex, isActive, resolveStepTarget]);
+  }, [isActive, currentStepIndex, resolveStepTarget]);
 
   const value = useMemo(
     () => ({
@@ -157,7 +154,11 @@ export const GuidedTourProvider = ({ children }) => {
     ]
   );
 
-  return <GuidedTourContext.Provider value={value}>{children}</GuidedTourContext.Provider>;
+  return (
+    <GuidedTourContext.Provider value={value}>
+      {children}
+    </GuidedTourContext.Provider>
+  );
 };
 
 export const useGuidedTour = () => {

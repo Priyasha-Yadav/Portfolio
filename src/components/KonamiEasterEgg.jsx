@@ -1,44 +1,48 @@
-import { useEffect, useState } from "react";
-import { Sparkles, Laugh } from "lucide-react"; // Fun icons!
+import { useEffect, useRef, useState } from "react";
+import { Sparkles, Laugh } from "lucide-react";
 
 const KonamiEasterEgg = () => {
   const [activated, setActivated] = useState(false);
 
-  // Konami Code Sequence
-  const konamiCode = [
-   'h','e','l','l','o'
-  ];
-  
-  let inputSequence = [];
+
+  const konamiCode = ['h', 'e', 'l', 'l', 'o'];
+
+
+  const inputSequenceRef = useRef([]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      inputSequence.push(event.key);
-      
-      // Keep only the last required inputs
-      if (inputSequence.length > konamiCode.length) {
-        inputSequence.shift(); // Remove first element if too long
+      const key = event.key.toLowerCase();
+      const sequence = inputSequenceRef.current;
+
+      sequence.push(key);
+
+      // Keep only last N keys
+      if (sequence.length > konamiCode.length) {
+        sequence.shift();
       }
 
-      // Check if user entered the Konami Code
-      if (JSON.stringify(inputSequence) === JSON.stringify(konamiCode)) {
+      // Check match
+      if (sequence.join('') === konamiCode.join('')) {
         setActivated(true);
-        inputSequence = []; // Reset sequence
-        setTimeout(() => setActivated(false), 5000); // Hide after 5 sec
+        inputSequenceRef.current = [];
+
+        const timeout = setTimeout(() => {
+          setActivated(false);
+        }, 5000);
+
+        return () => clearTimeout(timeout);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   return (
     <>
       {activated && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/80 text-white z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 text-white">
           <div className="text-center">
             <Sparkles className="w-16 h-16 text-yellow-400 animate-pulse mx-auto" />
             <h1 className="text-3xl font-bold mt-4">Secret Unlocked! 🔥</h1>
