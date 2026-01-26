@@ -50,7 +50,7 @@ const AboutMe = () => {
             setCurrentQuote((prev) => (prev + 1) % quotes.length);
         }, 4000); // rotates every 4 seconds
         return () => clearInterval(interval);
-    }, []);
+    },  [quotes.length]);
 
 
     return (
@@ -59,11 +59,9 @@ const AboutMe = () => {
 
             <motion.h2
                 className="text-4xl font-bold mb-12 bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3}}
+
             >
                 Who Am I? (Still Figuring Out)
             </motion.h2>
@@ -72,11 +70,9 @@ const AboutMe = () => {
                 {/* Description and Profile Image */}
                 <motion.div
                     className="lg:w-3/3"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
                     whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+
                 >
                     <p className="text-lg leading-loose tracking-wide text-gray-300 lg:text-2xl lg:leading-loose">
                         Hi, I'm Priyasha — a passionate developer who loves building, breaking, and solving things.
@@ -92,7 +88,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.7}}
                     whileHover={{ scale: 1.02 }}
                 >
 
@@ -126,7 +122,7 @@ const AboutMe = () => {
                             </div>
                         </motion.div>
                         <motion.div
-                            className="backdrop-blur-md bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-6 rounded-xl shadow-xl transition-all duration-500"
+                            className="backdrop-blur-md bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-6 rounded-xl shadow-xl transition-all duration-300"
                             whileHover={{ scale: 1.05, boxShadow: "0 0 25px #a78bfa" }}
                         >
                             <h3 className="text-xl font-bold text-purple-400 mb-8 border-b border-purple-400 pb-2">🎭 My Kind of Fun</h3>
@@ -140,8 +136,8 @@ const AboutMe = () => {
                                 ].map((hobby, idx) => (
                                     <motion.li
                                         key={idx}
-                                        className="flex items-start gap-3 hover:text-purple-300 transition-all duration-300"
-                                        whileHover={{ x: 8 }}
+                                        className="flex items-start gap-3 hover:text-purple-300 transition-all duration-100"
+                                        whileHover={{x:7}}
                                     >
                                         <span className="text-purple-400 text-lg">{hobby.icon}</span>
                                         <span>{hobby.text}</span>
@@ -162,7 +158,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, scale: 0.8, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                     whileHover={{
                         scale: 1.05,
                         boxShadow: "0px 20px 30px rgba(0,0,0,0.3)"
@@ -196,7 +192,7 @@ const AboutMe = () => {
                         }}
                         transition={{
                             type: "spring",
-                            stiffness: 300,
+                            stiffness: 200,
                             damping: 15,
                             mass: 0.8
                         }}

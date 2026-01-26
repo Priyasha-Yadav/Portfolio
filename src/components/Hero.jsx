@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useMemo } from "react";
 import { useGuidedTour } from './GuidedTourProvider.jsx';
 
 const Hero = () => {
@@ -37,19 +38,14 @@ const Hero = () => {
           </motion.button>
 
           <motion.button
-            data-scroll-target="projects"
-            className="px-6 py-3 bg-gradient-to-r from-red-500 to-purple-600 rounded-full hover:shadow-lg hover:shadow-red-500/20 transition-shadow"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-          >
-            View Projects
-          </motion.button>
-
-          <motion.button
-            data-scroll-target="about"
             className="px-6 py-3 border border-gray-700 rounded-full hover:bg-gray-800/30 transition-colors"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
+            onClick={() =>
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             About Me
           </motion.button>
@@ -77,6 +73,7 @@ const Hero = () => {
           ))}
         </div>
       </motion.div>
+
     </div>
   );
 };

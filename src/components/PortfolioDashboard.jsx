@@ -1,12 +1,10 @@
 import { useEffect, useState, useMemo, lazy, Suspense } from 'react';
-import { motion } from 'framer-motion';
 
 import Hero from './Hero';
 import SideNavigation from './SideNavigation';
 import Footer from './Footer.jsx';
 import { GuidedTourProvider } from './GuidedTourProvider.jsx';
 import GuidedTourOverlay from './GuidedTourOverlay.jsx';
-
 const ProjectsPage = lazy(() => import('./ProjectsPage'));
 const SkillsSection = lazy(() => import('./SkillsSection'));
 const YouTubeSection = lazy(() => import('./YouTubeSection'));
@@ -19,16 +17,20 @@ const PortfolioDashboard = () => {
   const phoneNumber = '918733012811';
   const [isExpanded, setIsExpanded] = useState(false);
   const [bgColor, setBgColor] = useState(localStorage.getItem('preferredBgColor') || 'black');
-  const [isScrollTopVisible, setIsScrollTopVisible] = useState(false);
 
   const particlePositions = useMemo(
     () =>
-      Array.from({ length: 20 }, () => ({
+      Array.from({ length: 100 }, () => ({
         top: `${Math.random() * 100}%`,
         left: `${Math.random() * 100}%`,
+        size: Math.random() * 2.5 + 1,
+        delay: Math.random() * 4 + 2,
+        duration: Math.random() * 1 + 3,
+        bright: Math.random() > 0.9,
       })),
     []
   );
+
 
   useEffect(() => {
 
@@ -76,19 +78,6 @@ const PortfolioDashboard = () => {
 
         <div className={`main-content ${isExpanded ? 'expanded' : ''}`}>
           <div className="container mx-auto px-6 py-12" id="home">
-            {isScrollTopVisible && (
-              <motion.button
-                type="button"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-
-                className="fixed bottom-3 right-5 z-40 h-10 w-10 rounded-full bg-gradient-to-r from-red-500 to-purple-600 shadow-lg shadow-red-500/40 hover:shadow-purple-500/40 transition-all duration-300 hover:-translate-y-1"
-                aria-label="Scroll back to top"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                ↑
-              </motion.button>
-            )}
             <header className="flex justify-between items-center mb-16">
               <h1 className="text-3xl font-light">
                 <span className="font-bold">Priyasha </span>
@@ -131,15 +120,21 @@ const PortfolioDashboard = () => {
                 {particlePositions.map((pos, index) => (
                   <span
                     key={index}
-                    className="absolute w-2 h-2 bg-white/20 rounded-full animate-ping"
+                    className={`absolute rounded-full star ${pos.bright ? "star-bright" : ""
+                      }`}
                     style={{
                       top: pos.top,
                       left: pos.left,
-                      transform: 'translate(-50%, -50%)',
+                      width: `${pos.size}px`,
+                      height: `${pos.size}px`,
+                      animationDelay: `${pos.delay}s`,
+                      animationDuration: `${pos.duration}s`,
+                      transform: "translate(-50%, -50%)",
                     }}
                   />
                 ))}
               </div>
+
             </div>
           </div>
           <section id="communication" className="mb-32 px-4" aria-labelledby="communication-heading">

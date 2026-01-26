@@ -1,30 +1,34 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
+import DelayedSuspense from "./components/DelayedSuspense";
 import { Analytics } from '@vercel/analytics/react';
-
-const ProjectsDesc = lazy(() => import('./components/ProjectsDesc.jsx'));
-const PortfolioDashboard = lazy(() => import('./components/PortfolioDashboard.jsx'));
+const PortfolioDashboard = lazy(() =>
+  import('./components/PortfolioDashboard.jsx')
+);
 
 function App() {
   return (
     <ErrorBoundary>
-      <Router>
-        <Suspense fallback={
-          <div className="min-h-screen bg-black text-white flex items-center justify-center">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4"></div>
-              <p>Loading...</p>
+      <Suspense fallback={null}>
+        <DelayedSuspense
+          minDuration={1000}
+          fallback={
+            <div className="min-h-screen bg-black flex items-center justify-center">
+              <div className="font-mono text-sm text-gray-400 space-y-4">
+                <p>Building full-stack experiences</p>
+                <div className="h-[2px] w-56 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full w-24 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 animate-indeterminate" />
+                </div>
+              </div>
             </div>
-          </div>
-        }>
-          <Routes>
-            <Route path="/" element={<PortfolioDashboard />} />
-            <Route path="/projects" element={<ProjectsDesc />} />
-          </Routes>
-        </Suspense>
-      </Router>
+          }
+        >
+          <PortfolioDashboard />
+        </DelayedSuspense>
+
+      </Suspense>
+
       <Analytics />
     </ErrorBoundary>
   );

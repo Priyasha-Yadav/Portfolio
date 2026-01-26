@@ -3,7 +3,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
-
 }
 
 html,
@@ -46,4 +45,60 @@ body {
     margin-right: 20rem;
     /* expanded xl width: 80 */
   }
+}
+
+
+.star {
+  background: white;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+  animation: twinkle ease-in-out infinite;
+}
+
+.star-bright {
+  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.9));
+  animation-duration: 3s !important;
+}
+
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.animate-indeterminate {
+  animation: indeterminate 1.2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
 }
