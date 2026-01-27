@@ -102,3 +102,10 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.4s ease-out forwards;
 }
+
+@media (hover: none) {
+  .group:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}

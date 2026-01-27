@@ -50,29 +50,25 @@ const AboutMe = () => {
             setCurrentQuote((prev) => (prev + 1) % quotes.length);
         }, 4000); // rotates every 4 seconds
         return () => clearInterval(interval);
-    },  [quotes.length]);
+    }, [quotes.length]);
 
 
     return (
         <section id="about" className="relative mb-16 px-6 lg:px-12 py-10 rounded-lg ">
             {/* Section Heading */}
 
-            <motion.h2
-                className="text-4xl font-bold mb-12 bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent text-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3}}
-
+            <h2
+                className="text-4xl font-bold mb-12 bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent text-center
+             transition-transform duration-300 ease-out hover:scale-105"
             >
                 Who Am I? (Still Figuring Out)
-            </motion.h2>
+            </h2>
+
             <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12 max-w-6xl mx-auto">
 
                 {/* Description and Profile Image */}
-                <motion.div
-                    className="lg:w-3/3"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-
+                <div
+                    className="lg:w-3/3 transition-transform duration-300 ease-out hover:scale-[1.02]"
                 >
                     <p className="text-lg leading-loose tracking-wide text-gray-300 lg:text-2xl lg:leading-loose">
                         Hi, I'm Priyasha — a passionate developer who loves building, breaking, and solving things.
@@ -80,7 +76,7 @@ const AboutMe = () => {
                         Right now, I'm diving deeper into my core subjects to strengthen my foundation.
                         If you've made it here, congrats — you've just found the most unpredictable dev you'll ever meet.
                     </p>
-                </motion.div>
+                </div>
             </div>
             <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-12 max-w-6xl mx-auto">
                 <motion.div
@@ -88,7 +84,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7}}
+                    transition={{ duration: 0.7 }}
                     whileHover={{ scale: 1.02 }}
                 >
 
@@ -137,7 +133,7 @@ const AboutMe = () => {
                                     <motion.li
                                         key={idx}
                                         className="flex items-start gap-3 hover:text-purple-300 transition-all duration-100"
-                                        whileHover={{x:7}}
+                                        whileHover={{ x: 7 }}
                                     >
                                         <span className="text-purple-400 text-lg">{hobby.icon}</span>
                                         <span>{hobby.text}</span>
@@ -150,7 +146,7 @@ const AboutMe = () => {
 
                 {/* Profile Image with Enhanced Interactive Tilt */}
                 <motion.div
-                    className="h-100 shadow-xl relative rounded-2xl overflow-hidden"
+                    className="h-100 shadow-xl relative rounded-2xl overflow-hidden hover:shadow-purple-500/20 transition-shadow duration-300"
                     style={{
                         perspective: "1200px",
                         transformStyle: "preserve-3d"
@@ -158,13 +154,10 @@ const AboutMe = () => {
                     initial={{ opacity: 0, scale: 0.8, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0px 20px 30px rgba(0,0,0,0.3)"
-                    }}
-                    onMouseMove={handleMouseMove}
-                    onMouseEnter={handleMouseEnter}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    whileHover={{ scale: 1.04 }}
+                    onMouseMove={isHovering ? handleMouseMove : undefined}
+                    onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={resetTilt}
                 >
                     {/* Glow effect overlay */}
@@ -188,13 +181,13 @@ const AboutMe = () => {
                         animate={{
                             rotateX: rotation.y,
                             rotateY: rotation.x,
-                            z: isHovering ? 10 : 0
                         }}
                         transition={{
                             type: "spring",
-                            stiffness: 200,
-                            damping: 15,
-                            mass: 0.8
+                            stiffness: 120,
+                            damping: 20,
+                            mass: 1
+
                         }}
                         style={{ transformStyle: "preserve-3d" }}
                     >
@@ -212,7 +205,7 @@ const AboutMe = () => {
                             }}
                             transition={{
                                 type: "spring",
-                                stiffness: 150,
+                                stiffness: 100,
                                 damping: 15
                             }}
                         />

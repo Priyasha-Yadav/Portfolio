@@ -1,9 +1,69 @@
 import { useState } from 'react';
+import ProjectCard from "./ProjectCard";
+import LazyRender from './LazyRender';
 
 const ProjectsPage = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Featured");
 
   const categorizedProjects = {
+    "Featured": [{
+      title: "Jobmentum [ Job Portal ]",
+      description:
+        "A MERN-based job portal enabling job seekers to apply for roles and recruiters to post jobs and manage applications through secure dashboards.",
+      image:
+        "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166559/Screenshot_2025-03-05_at_2.51.41_PM_uhhicu.png",
+      tags: ["MERN", "JWT", "Render", "Netlify", "Multer"],
+      url: "https://jomentum.netlify.app",
+    },
+
+    {
+      title: "MERNFolio",
+      description:
+        "A MERN based Portfolio builder designed for users who want to create their personal portfolio websites.",
+      image:
+        "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1763439540/Screenshot_2025-11-18_at_9.34.58_AM_vwsoe6.png",
+      tags: ["MERN", "JWT", "Render", "Netlify", "Multer"],
+      url: "https://mernfolio-delta.vercel.app",
+    },
+    {
+      title: "Companies API",
+      description:
+        "An API for storing and filtering detailed company data including salary, hiring criteria, benefits, and interview rounds.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2230",
+      tags: ["Next.js", "MongoDB"],
+      url: "https://documenter.getpostman.com/view/39189648/2sB3QRmSR1",
+    },
+    {
+      title: "YouTube Clone",
+      description:
+        "A React-based YouTube UI clone that fetches and displays videos using the YouTube Data API.",
+      image:
+        "https://github.com/Priyasha-Yadav/Task/blob/main/Frontend_Task/Youtube.png?raw=true",
+      tags: ["React.js", "YouTube API"],
+      url: "https://youtube-vite.netlify.app",
+    },
+    {
+      title: "Tic Tac Toe",
+      description:
+        "An interactive browser-based Tic Tac Toe game with win detection and reset functionality.",
+      image:
+        "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166557/Screenshot_2025-03-05_at_2.48.51_PM_sxnozm.png",
+      tags: ["HTML", "CSS", "JavaScript"],
+      url: "https://tic-tac-toe-py.netlify.app",
+    },
+    {
+      title: "Netflix UI Clone",
+      description:
+        "A cinematic dark-themed Netflix homepage UI clone created in Figma.",
+      image:
+        "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741167228/Screenshot_2025-03-05_at_3.02.47_PM_mqtdrf.png",
+      tags: ["UI/UX", "Figma"],
+      url: "https://www.figma.com/design/A5WYSeMi3ffMYJcyzJOq7K/Netflix",
+    },
+
+    ],
+
     "Full-Stack Projects": [
       {
         title: "Jobmentum [ Job Portal ]",
@@ -13,6 +73,16 @@ const ProjectsPage = () => {
           "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1741166559/Screenshot_2025-03-05_at_2.51.41_PM_uhhicu.png",
         tags: ["MERN", "JWT", "Render", "Netlify", "Multer"],
         url: "https://jomentum.netlify.app",
+      },
+
+      {
+        title: "MERNFolio",
+        description:
+          "A MERN based Portfolio builder designed for users who want to create their personal portfolio websites.",
+        image:
+          "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1763439540/Screenshot_2025-11-18_at_9.34.58_AM_vwsoe6.png",
+        tags: ["MERN", "JWT", "Render", "Netlify", "Multer"],
+        url: "https://mernfolio-delta.vercel.app",
       },
     ],
     APIs: [
@@ -172,18 +242,15 @@ const ProjectsPage = () => {
       },
     ],
   };
-
-
   // Get all categories including "All"
-  const categories = ["All", ...Object.keys(categorizedProjects)];
+  const categories = Object.keys(categorizedProjects);
 
   // Filter projects based on active category
-  const filteredProjects = activeCategory === "All"
-    ? Object.values(categorizedProjects).flat()
-    : categorizedProjects[activeCategory] || [];
+  const filteredProjects = categorizedProjects[activeCategory] || [];
+
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden p-10">
+    <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden p-10">
       <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Header with animated gradient */}
         <div className="mb-16 text-center">
@@ -215,72 +282,17 @@ const ProjectsPage = () => {
 
         {/* Projects grid with animations */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <a
-              key={index}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative rounded-2xl overflow-hidden border border-white/10 
-             bg-gradient-to-b from-gray-800/40 to-gray-900/80 
-             backdrop-blur-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.8)]
-             transition-all duration-500 hover:-translate-y-3 hover:shadow-purple-500/20"
-            >
-              {/* Glow layer */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500
-                  bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-red-500/10" />
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project) => (
+              <LazyRender key={project.url} height={420}>
+                <ProjectCard project={project} />
+              </LazyRender>
+            ))}
+          </div>
 
-              {/* Image */}
-              <div className="relative h-52 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              </div>
-
-              {/* Content */}
-              <div className="relative p-5 space-y-3">
-                <h3 className="text-xl font-semibold tracking-tight">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm text-gray-400 leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex items-center gap-2 pt-2">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs px-3 py-1 rounded-full 
-                 bg-white/5 border border-white/10 
-                 text-gray-300 backdrop-blur-md
-                 group-hover:bg-white/10 transition"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-
-                  {/* Push arrow to the far right */}
-                  <span
-                    className="ml-auto shrink-0 h-8 w-8 rounded-full 
-               bg-white/5 flex items-center justify-center 
-               text-sm cursor-pointer
-               transition group-hover:bg-purple-500 group-hover:scale-110"
-                  >
-                    ↗
-                  </span>
-                </div>
-              </div>
-            </a>
-
-
-          ))}
         </div>
+
       </div>
     </div>
   );

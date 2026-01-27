@@ -20,7 +20,7 @@ const PortfolioDashboard = () => {
 
   const particlePositions = useMemo(
     () =>
-      Array.from({ length: 100 }, () => ({
+      Array.from({ length: 70 }, () => ({
         top: `${Math.random() * 100}%`,
         left: `${Math.random() * 100}%`,
         size: Math.random() * 2.5 + 1,
@@ -51,6 +51,40 @@ const PortfolioDashboard = () => {
     };
   }, []);
 
+useEffect(() => {
+  if (!window.location.hash) return;
+
+  const hash = window.location.hash.replace("#", "");
+
+  const idMap = {
+    certificates: "certificates-section",
+    projects: "projects",
+  };
+
+  const targetId = idMap[hash];
+  if (!targetId) return;
+
+  let rafId;
+  let tries = 0;
+
+  const tryScroll = () => {
+    const el = document.getElementById(targetId);
+
+    if (el && el.offsetHeight > 0) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    tries++;
+    if (tries < 30) {
+      rafId = requestAnimationFrame(tryScroll);
+    }
+  };
+
+  rafId = requestAnimationFrame(tryScroll);
+
+  return () => cancelAnimationFrame(rafId);
+}, []);
 
   const gradientClass = useMemo(() => {
     switch (bgColor) {

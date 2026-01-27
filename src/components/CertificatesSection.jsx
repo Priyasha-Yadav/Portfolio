@@ -93,6 +93,14 @@ const certificates = [
         link: "https://www.sololearn.com/certificates/CC-X2IMUN2O",
     },
     {
+        title: "Programming In Java",
+        organization: "NPTEL",
+        date: "October 2025",
+        category: "Programming",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1767675826/Screenshot_2026-01-06_at_10.33.31_AM_wwwd9z.png",
+        link: "https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs110/Course/NPTEL25CS110S45630032210988963.pdf",
+    },
+    {
         title: "Coding Foundations",
         organization: "Sololearn",
         date: "January 2025",
@@ -132,14 +140,7 @@ const certificates = [
     //   image: "https://api2.sololearn.com/v2/certificates/CC-PULWLYCU/image/png?t=638718778158268370",
     //   link: "https://www.sololearn.com/certificates/CC-PULWLYCU",
     // },
-    {
-        title: "Web Development",
-        organization: "Sololearn",
-        date: "December 2024",
-        category: "Web Development",
-        image: "https://api2.sololearn.com/v2/certificates/CC-P6H0LEIA/image/png?t=638705317285883560",
-        link: "https://www.sololearn.com/certificates/CC-P6H0LEIA",
-    },
+
     // {
     //   title: "Introduction to Python",
     //   organization: "Sololearn",
@@ -155,6 +156,32 @@ const certificates = [
         category: "Database",
         image: "https://api2.sololearn.com/v2/certificates/CC-G5ZCWBF1/image/png?t=638595931432498120",
         link: "https://www.sololearn.com/certificates/CC-G5ZCWBF1",
+    },
+    {
+        title: "ReactJS",
+        organization: "Infosys Springboard",
+        date: "July 2025",
+        category: "Web Development",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768926087/Screenshot_2026-01-20_at_9.51.07_PM_uavi1t.png",
+        link: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768926087/Screenshot_2026-01-20_at_9.51.07_PM_uavi1t.png",
+
+    },
+    {
+        title: "HTML5",
+        organization: "Infosys Springboard",
+        date: "July 2025",
+        category: "Web Development",
+        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768925957/Screenshot_2026-01-20_at_9.48.11_PM_zja2kn.png",
+        link: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768925957/Screenshot_2026-01-20_at_9.48.11_PM_zja2kn.png",
+
+    },
+    {
+        title: "Web Development",
+        organization: "Sololearn",
+        date: "December 2024",
+        category: "Web Development",
+        image: "https://api2.sololearn.com/v2/certificates/CC-P6H0LEIA/image/png?t=638705317285883560",
+        link: "https://www.sololearn.com/certificates/CC-P6H0LEIA",
     },
     {
         title: "Introduction to JavaScript",
@@ -235,26 +262,7 @@ const certificates = [
         category: "Cloud",
         image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768927822/Screenshot_2026-01-20_at_10.20.11_PM_yaslxf.png",
         link: "https://simpli-web.app.link/e/oOaorSoTEUb",
-    },
-    {
-        title: "ReactJS",
-        organization: "Infosys Springboard",
-        date: "July 2025",
-        category: "Web Development",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768926087/Screenshot_2026-01-20_at_9.51.07_PM_uavi1t.png",
-        link: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768926087/Screenshot_2026-01-20_at_9.51.07_PM_uavi1t.png",
-
-    },
-    {
-        title: "HTML5",
-        organization: "Infosys Springboard",
-        date: "July 2025",
-        category: "Web Development",
-        image: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768925957/Screenshot_2026-01-20_at_9.48.11_PM_zja2kn.png",
-        link: "https://res.cloudinary.com/dd5zrwqzj/image/upload/v1768925957/Screenshot_2026-01-20_at_9.48.11_PM_zja2kn.png",
-
     }
-
 ];
 
 // Create categories for filtering
@@ -290,7 +298,6 @@ const CertificatesSection = () => {
 
     return (
         <section
-            id="certificates-section"
             className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-gray-900 to-black"
         >
             {/* ---------- TITLE ---------- */}

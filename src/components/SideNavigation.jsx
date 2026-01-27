@@ -58,9 +58,16 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
                 setShowColorOptions((prev) => !prev);
                 setActiveSection(section);
             } else if (section === 'certificates') {
+                window.history.pushState(null, "", "#certificates");
                 document.getElementById('certificates-section')?.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection(section);
-            } else if (section === 'home') {
+            }
+            else if (section === 'projects') {
+                window.history.pushState(null, "", "#projects");
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                setActiveSection(section);
+            }
+            else if (section === 'home') {
                 document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection('home');
             } else if (section === 'leetcode') {
